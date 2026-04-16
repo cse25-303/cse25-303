@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monameng Security Company</title>
+</head>
+<body>
+    <header>
+        <img src = "logo.png" alt = "Company logo" width ="300" height = "20">
+       
+             <a href = "index.html">Home</a>
+             <a href = "About">About</a>
+             <a href = "Services">Services</a>
+             <a href = "Apply">Apply</a>
+             <a href = "Projects">Projects</a>
+             <a href = "Feedback">Feedback</a>
+          
+        <form action="">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    </header>
+    <main>
+        <h3>WHO WE ARE</h3>
+        <p>>Monameng security Company was founded in 1999 by Oteng Monameng who has security industry experience of more than 10 years,
+        and is now a leading high-tech security dedicated to protecting lives and assets through innovation.</p 
+                                                                                                                
+        <h3>WHAT WE DO</h3>
+        <p> We specialize in precision CCTV installation, state-of-theart- alarm system, access control, and elite tactical armed respose.
+            With a focus on technical excellence and rapid intervention, we ensure clients are always one step ahead of potential threats.</p>
+        
+       <h3>MISSION</h3>
+       <p>To deliver peace of mind through rapid tactical response and state-of-the-art electronic security.
+           We strive to lead the industry by integrating innovative technology with elite response teams to ensure every alarm is met with immediate, effective action.</p>
+        <h3>VALUES</h3>
+       <p> <ul>
+          <li> Speed: Rapid armed intervention when it matters most.</li>
+          <li> Precision: Expert installation of CCTV and accsss control.</li>
+           <li>Vigilant: Constant alarm monitoring and technical support.</li>
+           <li>Reliability: High-end hardware and dedicated response units.</li>
+           </ul>
+      </p>
+        <h3>BRANCHES</h3> 
+           <p> <ul>
+                <li>Head Office: Gaborone</li>
+                <li>North Hub: Maun</li> 
+               <li>South station: GoodHope</li> 
+               </ul>
+           </p>
+         
+    </main>
+                                                                                                   
+</body>
