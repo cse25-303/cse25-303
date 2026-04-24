@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;/* This is for responsive widths */ 
+  }
+body {
+      font-family: sans-sarif;
+      color: #333;
+  }
+header {
+        padding: 10px 5%;/*keeps content away from screem edges*/
+      }
+nav {
+      display: flex; /* turns the nav into a flexible container*/
+      justify-content: space-between; /* pushes logo to the left, navigation to the center and search bar to the right*/
+      align-items: center;/* Vertically align all items in the nav bar in the center*/
+    }
+.nav-links {
+            display: flex;/* Aligns the list items horizontally*/
+            list-style: none; /* Removes the bullet points*/
+            gap: 20px; /* Add space between links;
+           }
