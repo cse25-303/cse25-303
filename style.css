@@ -5,18 +5,112 @@
   }
 body {
       font-family: sans-sarif;
+      line-height: 1.5;
       color: #333;
-  }
+      background-color: #f9f9f9;
+      }
+.wrapper {
+          width: 90%;
+          max-width:1100px;
+          margin: 0 auto; /* Centeres the the whole page content*/
+          display: flex;
+          flex-wrap: wrap; /* Allows the sidebars to drop below on mobile phone (small screens)*/
+          gap: 20px;
+          padding: 20px 0;
+          }
+
+.main-box {
+            flex: 2; /* Takes 66% of space*/
+            min-width: 300px; /* If the screen is less than 300px, it stacks*/ 
+          }
+
+.sidebar  {
+            flex: 1; /* Takes 33% of space*/
+            min-width: 250px;
+            padding: 20px;
+            border-left: 4px solid #00b0a3; /* Teal accent line*/
+          }
+
 header {
         padding: 10px 5%;/*keeps content away from screem edges*/
       }
+
+
 nav {
+      background: white;
       display: flex; /* turns the nav into a flexible container*/
       justify-content: space-between; /* pushes logo to the left, navigation to the center and search bar to the right*/
       align-items: center;/* Vertically align all items in the nav bar in the center*/
+      border-botton: 2px solid #eee;
     }
+
 .nav-links {
             display: flex;/* Aligns the list items horizontally*/
             list-style: none; /* Removes the bullet points*/
             gap: 20px; /* Add space between links;
            }
+
+.nav-links a {
+              text-decoration: none;
+              color: #333
+              font-size: 0.85rem;
+              font-weight: bold;
+              text-transform: uppercase; 
+              }
+      
+  .input-group {
+                 margin-botton: 15px;
+               }
+
+  label {
+          dispaly: block;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+
+input, textarea {
+                  width: 100%;
+                  padding: 10px;
+                  border: 1px solid #ccc;
+                  cursor: pointer;
+                  font-weight: bold;
+                }
+
+.btn  {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        curser: pointer;
+        font-weight: bold;
+      }
+
+.btn-teal  {
+            background: #00b0a3;
+            color: white;
+           }
+
+.btn-gray {
+            background: #eee;
+          }
+
+footer {
+          background: #fbbc7;
+          padding: 30px 5%;
+          margin-top: 40px;
+        }
+
+.footer-flex {
+          display: flex;
+          flex-wrap: wrap; 
+          justify-content: space-between;
+          gap: 20px;
+      }
+.footer-item {
+                flex: 1;
+                min-width:200px;
+              }
+
+@media (max-width: 600px) {
+                            nav {flex-direction: column;}
+                            .nav-links {margin-top: 10px;}
+                          }
