@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link ref = "stylesheet" href = "style.css">
 </head>
 <body>
     <header>
-        <img src = "logo.png" alt = "Company logo" width ="30" height = "30">
+       <div class = "logo"> <img src = "logo.png" alt = "Company logo" width ="30" height = "30"> </div>
        
-           <nav>  
-             <ul>  
+           <nav class= "nav-container">  
+             <ul class ="nav-links">  
                   <li> <a href = "index.html">Home</a></li>
                   <li>  <a href = "about.html">About</a></li>
                   <li>  <a href = "services.html">Services</a></li>
@@ -25,10 +26,12 @@
     </form>
     </header>
     <hr>
-    <main>
-       <section class = "hero">
-                <img src = "Armed.png" alt width = "300" height = "80">
-                <h2>ARMED RESPONSE</h2> 
+   
+    <div class = "wrapper">
+        <main class = "main-box">
+           <section class = "hero">
+                 <img src = "Armed.png" alt width = "300" height = "80">
+                 <h2>ARMED RESPONSE</h2> 
                  <p>
                      Our elite armed response units are the high-tech monitoring center our highly
                      trained officers are equipped to provide 
@@ -47,27 +50,37 @@
         </p>
     </main>
     <hr>
-    <footer class = "foot">
+    <footer class = "footer-teal">
        
+      <div class = "footer-item">
         <p>
             <h3>CONTACT</h3>Phone:+267 73772112<br>
             Email:<a href = "mailto:monamengsecuritycomapany@gmail.com">monamengsecuritycomapany@gmail.com</a>   <br> 
-            Location:Molepolole, Botswana </p>
-        
+            Location:Molepolole, Botswana 
+        </p>
+     </div>
+
+        <div class = "footer-item">
         <p>
             <h3>LEGAL</h3>
             <a href = "Terms and conditions">Terms and coditions</a><br>
             <a href = "Disclaimer">Disclaimer</a><br>
             <a herf = "Website usage policy">Website usage policy</a>
         </p>
-        
+       </div>
+
+        <div class = "footer-item">
         <p>
             <h3>PRIVACY</h3>
             <a href = "Privacy policy">Privacy policy</a><br>
             <a href = "Cookie policy">Cookie policy</a><br>
             <a href = "Data Protection Notice">Data Protection Notice</a>
         </p>
+        </div>
+        
+        <div class = "footer-item">
         <p>Copyright 2026 Monameng. All rights reserved</p>
+        </div>
         
     </footer>
 </body>
