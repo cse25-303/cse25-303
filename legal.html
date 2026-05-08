@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONAMENG SECURITY COMPANY</title>
+    <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
@@ -26,69 +26,60 @@
 
                 <li> <a href="about.html">About</a></li>  <!--about page-->
 
-                <li> <a href = "services.html">Services</a> </li>    <!--services page-->
+                <!--services page-->
+                <li class = "dropdown"><a href = "services.html">Services</a> </li>
 
                 <li> <a href="apply.html">Apply</a></li> <!--apply page-->
 
-                <li> <a href="projects.html" class = "active">Projects</a></li> <!--projects page-->
+                <li> <a href="projects.html">Projects</a></li> <!--projects page-->
 
                 <li> <a href="feedback.html">Feedback</a></li>  <!--feedback page-->
             </ul>
         </nav>
 
         <!--right: search bar-->
-        <form action="" class="search" onsubmit="return runSearch()">
-
+        <form action="" class="search" onsubmit = "return runSearch()">
+            <label for="search-input" class="ote">Search</label>
             <input type="text" id="search-input" placeholder="Search.." name="search" required>
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
     </header>
+    <main>
+        <h2>LEGAL</h2>
 
+        <h3>TERMS AND CONDITIONS</h3>
+        <p>
+            These terms and coditions govern the provision of security services by Monameng Security Company.
+            By engaging in our services you are agreeing to these terms.
+        </p>
+        <p>
+            Monameng Security Comapany offeres CCTV Installation, Armed Response, Alarms, and Access Control services.
+            All services are subject to a written agreement.
+            Services will only commence after a signed agreement outlining scope, pricing, and duration.
+            The clint must pay all fees on time.
+            Late payments may result in penalties or suspension.
+            Fees are defined in the contract.
+        </p>
 
+        <h3>DISCLAMER</h3>
+         <p>
+            While the Company strives to provide effective security solutions:
+            There is no guarantee that incidents like theft, or damage to property eill not occur.
+            Security measures reduce risk not eliminate it.
+            Information on this website is for general guidence only and should not be considered professional or legal advice
+        </p>
 
-
-
-<h3 id = "intro">CURRENT BIG PROJECTS</h3> 
-<section class = "side-le-main">
-    <main class = "about-main-contents">
-            
-         <section class = "box">
-           <h5> Gaborone West Industrial Complex</h5> 
-            <p> High-security surveillance and alarm monitoring for a multi-warehouse logistics park.</p>
-        </section>
-
-         <section class = "box">
-           <h5>First Nation Bank</h5>
-            <p> Responsible for alarm and CCTV monitoring in the Bank at Mafenyatlala mall.</p>
-        </section>
-
-       <!--<h3> RECENT INSTALLATION</h3>*/-->
-       
-            <section class = "box">
-            <h5>Phakalane Golf Estate Private Residence</h5>
-            <p> Installed an alarm on the 20th of February in a recident home and it is linked to our 24/7 Alarm Respnse.</p>
-            </section>
-
-            <section class = "box">
-            <h5>Borakalalo Primary School</h5>
-            <p> Installed card readers on the school on 10th Aprial 2026 to allow only authorized staff members and students on the school gates.</p>
-            </section>  
-
+        <h3>WEBSITE USAGE POLICY</h3>
+        <p>
+            By accessing this website, you agree to comply with this policy.
+            You may browse this website, Request services, and and use information for personal or business reference.
+            YOU MUST NOT: 
+            Use the website for unlawful purpoase, attempt to hact or damage the website,copy and reproduce content without permision,
+             and upload malicious software.
+        </p>
     </main>
 
-    <aside class = "side">
-        <h3>SAFETY ADVICE</h3>
-            <p> Be aware of your surroundings,pay attention to people, places, and activities around you. <br>
-                Keep emergency contacts and numbers nearby.
-            </p>  
-             <a href="https://youtube.com/shorts/mX0SunmarlU?si=weIIGkKIA5M4v2CK" target="blank">
-                   <img src="images/video (2).png" alt="Watch a video of securitytips through this link" width="100%">
-                    <p>Click to watch on YouTube</p>
-             </a>     
-    </aside>
-    </section>
-        
-      <footer class="foot">
+        <footer class="foot">
 
             <div class="footer-top">
 
@@ -126,7 +117,6 @@
                 </div>
 
         </footer>
-         <script src="formvalidation.js"></script>
 </body>
 
 </html>
