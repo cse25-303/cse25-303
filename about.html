@@ -1,129 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MONAMENG SECURITY COMPANY</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-       <div class = "logo"> <img src = "logo.png" alt = "Company logo" width ="30%" height = "20%"> </div>
-       
-           <nav class = "nav" >  
-             <ul >  
-                  <li> <a href = "index.html">Home</a></li>
-                  <li>  <a href = "about.html">About</a></li>
-                  <li class = "dropdown">  <a href = "services.html">Services</a></li>
-                        <ul class = "dropdown-menu">
-                            <li><a href="cctvInstallation.html">CCTV Installatin</a></li>
-                            <li><a href="armedResponse.html">Armed response</a></li>
-                            <li><a href="alarms.html">Alarms</a></li>
-                            <li><a href="accessControl.html">Access control</a></li>
-                        </ul>
-                  <li> <a href = "apply.html">Apply</a></li>
-                  <li> <a href = "projects.html">Projects</a></li>
-                  <li> <a href = "feedback.html">Feedback</a></li>
-             </ul>
-          </nav>
-        <form action="" class = "search">
-               <label for = "search-input" class = "ote">Search</label> 
-              <input type="text" id = "search-input" placeholder="Search.." name="search">
-              <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </header> 
-  
-    <main class = "wrapper">
-        <h3>WHO WE ARE</h3>
-        <p>
-            Monameng security Company was founded in 1999 by Oteng Monameng 
-            who has security industry experience of more than 10 years,
-            and is now a leading high-tech security dedicated to protecting lives and assets through innovation.
-        </p 
-                                                                                                                
-        <h3>WHAT WE DO</h3>
-        <p>
-            We specialize in precision CCTV installation, state-of-theart- alarm system, access control,
-            and elite tactical armed respose.
-            With a focus on technical excellence and rapid intervention,
-            we ensure clients are always one step ahead of potential threats.
-        </p>
-        
-       <h3>MISSION</h3>
-       <p>
-           To deliver peace of mind through rapid tactical response and 
-           state-of-the-art electronic security.
-           We strive to lead the industry by integrating innovative technology with 
-           elite response teams to ensure every alarm is met with immediate,
-           effective action.
-       </p>
-        <h3>VALUES</h3>
-       <p>
-        <ul>
-          <li> Speed: Rapid armed intervention when it matters most.</li>
-          <li> Precision: Expert installation of CCTV and accsss control.</li>
-           <li>Vigilant: Constant alarm monitoring and technical support.</li>
-           <li>Reliability: High-end hardware and dedicated response units.</li>
-        </ul>
-      </p>
-        <h3>BRANCHES</h3> 
-           <p> <ul>
-                <li>Head Office: Gaborone</li>
-                <li>North Hub: Maun</li> 
-               <li>South station: GoodHope</li> 
-               </ul>
-           </p>
-         
-    </main>
-    <aside class = "side">
-        <img src = "Profile.png" width = "60" height = "60"> 
-           <h4>LIST OF SERVICES OFFERED</h4> 
-            <ul>
-                <li><a href = "cctvInstallation.html">CCTV INSTALLATION</a></li>
-                <li><a href = "armedResponse">Armed Response</a></li>
-                <li><a href = "alarms.html">ALARMS</a></li>
-                <li><a href = "accessControl">ACCESS CONTROL</a></li>
+        <!--logo code-->
+        <div class="logo"> 
+        <img src="images/logo.png" alt="Company logo" width="30%" height="20%">
+         </div>
+
+         <!--navigation bar-->
+        <nav class="nav">
+
+         <ul>      
+                <li> <a href="index.html">Home</a></li>  <!--home page-->
+
+                <li> <a href="about.html" class = "active">About</a></li>  <!--about page-->
+                
+                <li> <a href = "services.html">Services</a> </li>   <!--services page-->
+
+                <li> <a href="apply.html">Apply</a></li> <!--apply page-->
+
+                <li> <a href="projects.html">Projects</a></li> <!--projects page-->
+
+                <li> <a href="feedback.html">Feedback</a></li>  <!--feedback page-->
             </ul>
-    </aside>
-     
-    <footer class ="foot">
-       
-        <div class="footer-top">
+        </nav>
 
-     <section class = "footer-item">
-         <h3>CONTACT</h3>
-         <ul>
-           <li>Phone:+267 73772112</li> 
-           <li> Email:<a href = "mailto:monamengsecuritycomapany@gmail.com">monamengsecuritycomapany@gmail.com</a></li>   
-           <li> Location:Molepolole, Botswana </li>
-         </ul>
-     </section>
+        <!--right: search bar-->
+        <form action="" class="search" onsubmit="return runSearch()">
 
-        <section class = "footer-item">
-     <h3>LEGAL</h3>
-        <ul>
-           <li> <a href = "terms.html">Terms and coditions</a></li> 
-           <li> <a href = "disclaimer.html">Disclaimer</a></li> 
-           <li> <a href = "policy.html">Website usage policy</a></li>
-        </ul>
-       </section>
+            <input type="text" id="search-input" placeholder="Search.." name="search" required>
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </header>
 
-        <section class = "footer-item">
-        <h3>PRIVACY</h3> 
-       <ul>
-           <li> <a href = "privacyPolicy.html">Privacy policy</a></li>
-           <li>  <a href = "CookiePolicy.html">Cookie policy</a></li>
-           <li> <a href = "DataProtectionNotice.html">Data Protection Notice</a></li>
-         </ul>
+        
+        <section id = "intro">
+                <h2>WHO WE ARE</h2>
+                <p>
+                    Monameng security Company was founded in 1999 by Oteng Monameng
+                    who has security industry experience of more than 10 years,
+                    and is now a leading high-tech security dedicated to protecting lives and assets through
+                    innovation.
+                </p>
         </section>
-        
-        <div class = "footer-bottom">
-        <p>&Copyright 2026 Monameng. All rights reserved</p>
+        <main class = "side-le-main">
+        <div class="about-main-contents">
+
+        <section class="box">
+                <h3>WHAT WE DO</h3>
+                <p>
+                    We specialize in precision CCTV installation, state-of-theart- alarm system, access control,
+                    and elite tactical armed respose.
+                    With a focus on technical excellence and rapid intervention,
+                    we ensure clients are always one step ahead of potential threats.
+                </p>
+            </section>
+
+            <section class="box">
+                <h3>MISSION</h3>
+                <p>
+                    To deliver peace of mind through rapid tactical response and
+                    state-of-the-art electronic security.
+                    We strive to lead the industry by integrating innovative technology with
+                    elite response teams to ensure every alarm is met with immediate,
+                    effective action.
+                </p>
+            </section>
+
+            <section class="box">
+                <h3>VALUES</h3>
+                <p>
+                <ul>
+                    <li> Speed: Rapid armed intervention when it matters most.</li>
+                    <li> Precision: Expert installation of CCTV and accsss control.</li>
+                    <li>Vigilant: Constant alarm monitoring and technical support.</li>
+                    <li>Reliability: High-end hardware and dedicated response units.</li>
+                </ul>
+                </p>
+            </section>
+
+            <section class="box">
+                <h3>BRANCHES</h3>
+                <p>
+                <ul>
+                    <li>Head Office: Gaborone</li>
+                    <li>North Hub: Maun</li>
+                    <li>South station: GoodHope</li>
+                </ul>
+                </p>
+            </section>
         </div>
-        
-    </footer>
+   
+
+    <aside class="side">
+        <img src="images/Profile.png" width="100%" height="100%" alt="Profile picture of the founder">
+        <h4>LIST OF SERVICES OFFERED</h4>
+        <ul>
+            <li><a href="cctvInstallation.html">CCTV INSTALLATION</a></li>
+            <li><a href="armedResponse.html">Armed Response</a></li>
+            <li><a href="alarms.html">ALARMS</a></li>
+            <li><a href="accessControl.html">ACCESS CONTROL</a></li>
+        </ul>
+    </aside>
+     </main>
+
+
+    
+        <footer class="foot">
+
+            <div class="footer-top">
+
+                <section class="footer-item">
+                    <h3>CONTACT</h3>
+                    <ul>
+                        <li>Phone:+267 73772112</li>
+                        <li> Email:<a
+                                href="mailto:monamengsecuritycomapany@gmail.com">monamengsecuritycomapany@gmail.com</a>
+                        </li>
+                        <li> Location:Molepolole, Botswana </li>
+                    </ul>
+                </section>
+
+                <section class="footer-item">
+                    <h3>LEGAL</h3>
+                    <ul>
+                        <li> <a href="legal.html">Terms and coditions</a></li>
+                        <li> <a href="legal.html">Disclaimer</a></li>
+                        <li> <a href="legal.html">Website usage policy</a></li>
+                    </ul>
+                </section>
+
+                <section class="footer-item">
+                    <h3>PRIVACY</h3>
+                    <ul>
+                        <li> <a href="privacy.html">Privacy policy</a></li>
+                        <li> <a href="privacy.html">Cookie policy</a></li>
+                        <li> <a href="privacy.html">Data Protection Notice</a></li>
+                    </ul>
+                </section>
+
+                <div class="footer-bottom">
+                    <p>&copy; Copyright 2026 Monameng. All rights reserved</p>
+                </div>
+
+        </footer>
+         <script src="formvalidation.js"></script>
 </body>
+
 </html>
