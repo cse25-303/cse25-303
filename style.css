@@ -1,116 +1,629 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;/* This is for responsive widths */ 
-  }
-body {
-      font-family: sans-sarif;
-      line-height: 1.5;
-      color: #333;
-      background-color: #f9f9f9;
-      }
-.wrapper {
-          width: 90%;
-          max-width:1100px;
-          margin: 0 auto; /* Centeres the the whole page content*/
-          display: flex;
-          flex-wrap: wrap; /* Allows the sidebars to drop below on mobile phone (small screens)*/
-          gap: 20px;
-          padding: 20px 0;
-          }
-
-.main-box {
-            flex: 2; /* Takes 66% of space*/
-            min-width: 300px; /* If the screen is less than 300px, it stacks*/ 
-          }
-
-.sidebar  {
-            flex: 1; /* Takes 33% of space*/
-            min-width: 250px;
-            padding: 20px;
-            border-left: 4px solid #00b0a3; /* Teal accent line*/
-          }
-
+  box-sizing: border-box;
+  /* Reset some default spacing */
+  font-family: Arial, sans-serif;
+}
+/*this is for the header*/
 header {
-        padding: 10px 5%;/*keeps content away from screem edges*/
-      }
+  display: flex;         /* align content horizontally*/
+  justify-content: space-between;    /* pushes items apart (logo on the far left, search far right)*/
+  align-items: center;  /*vertically centers all three sections*/
+  background-color: white;
+}
+
+.logo{
+  flex: 1;  /* takes  1 share(small, left) of the header width*/
+}
+
+.nav{
+  flex:2;               /* takes 2 shares - more room to the center*/
+  display: flex;
+  justify-content: center;   /*centers the <ul> inside the .nav */
+  }  
+
+  .search {
+  flex: 1;
+  display: flex;
+ /* align-items: center;*/
+  justify-content: flex-end; /* pushes search to the far right*/
+}
+
+/*horizontal row of links (NAV LIST)*/
+.nav ul {
+  display: flex;
+  list-style: none;  /* removes bullet points*/
+  gap: 20px; /* space between each link*/
+  /*margin: 0;
+  padding: 0;*/
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #0b0000;;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  transition: all 0.3s ease; /* smooth color change on hover*/
+}
+
+ .nav ul li a.active {
+  background-color: #1fbbc7;
+  color: white;
+  border-radius: 20px;
+}
+
+/*hover and focus state*/
+.nav a:hover,
+ .nav a :focus,
+ .nav a .active {
+  background-color: #1fbbc7;
+  color: white;
+  border-radius: 20px;
+}
+
+.search input {
+  padding: 5px 10px;
+  border: 1px solid #0b0000;
+  border-radius: 3px 0 0 3px; /*rounded only on the left*/
+ font-size: 0.82rem;
+  outline: none;
+}
+.search input[type = "text"] :focus {
+  border-color: #1fbbc7;
+}
+
+.search button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #ffffff;
+  color: #0b0000;
+  border-radius: 0 3px 3px 0;/* rounded only on left side*/
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search button:hover, 
+.search button:focus {
+  background-color: #1fbbc7;
+  color: white;
+}
 
 
-nav {
-      background: white;
-      display: flex; /* turns the nav into a flexible container*/
-      justify-content: space-between; /* pushes logo to the left, navigation to the center and search bar to the right*/
-      align-items: center;/* Vertically align all items in the nav bar in the center*/
-      border-botton: 2px solid #eee;
+
+/*main content in the home page*/
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  /*min-height: 800vh;*/
+  padding: 20px;
+  box-sizing: border-box;
+  
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+ 
+/*The footer style*/
+.foot {
+  background-color: #1fbbc7;
+  color: #0b0000;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.footer-top{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.footer-item h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.footer-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-item a {
+  text-decoration: none;
+}
+
+.footer-item li {
+   margin-bottom: 0.4rem;
+}
+
+.footer-item a :hover, 
+.footer-item a :focus{
+    text-decoration: underline;
+   /* outline: 2px solid #ffffff;*/
+   /* outline-offset: 2px;*/
+}
+.footer-bottom{
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+/* main content on about page and related pages*/
+.side-le-main{
+  display: grid !important;
+  grid-template-columns: 1fr 250px;
+  gap: 30px;
+  padding: 15px;
+  align-items: start;
+  width: 100%;
+}
+
+.about-main-contents{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  border-right: 1px solid #0b0000;
+   padding-right: 30px;
+  /*width: 20%;*/
+}
+
+
+#intro {
+  max-width: 80%;
+  padding: 1%;
+  margin: 2%;
+ 
+  }
+
+.side{
+  padding: 15px;
+  
+}
+
+.box{
+  padding: 1%;
+  margin: 2%;
+  max-width: 80%;
+}
+
+.services{
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+/*form style*/
+.services-container{
+  display: grid;
+  grid-template-columns: 3fr 1fr;  /* main section is wider than sidebar*/
+  gap: 30px;       /*space between main and sidebar*/ 
+  padding: 40px 30px;   /*space around the whole section*/
+ /* max-width: 1100px;*/  /*stops layout from stretching too wide*/
+  /*margin: 0 auto;  */ /*centers the container on the page*/
+}
+
+.services-main-contents{
+  padding:15px;
+  border-right: 1px solid #0b0000;
+}
+
+.main-image{
+  width: 100%;
+  height: 300px;
+  display: block;
+ 
+}
+
+
+.services-main-contents h3,
+.services-main-contents h4{
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  padding-right: 12px;
+  
+}*/
+
+  .services-side{
+    padding: 15px;
+   /* border-radius: 10px;*/
+    padding: 25px 20px;
+   /*box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);*/
+    height: fit-content;
+  }
+
+  .services-side h3{
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 16px;
+    padding-bottom: 10px;
+  }
+
+  .services-side h5{
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 14px 0 4px;
+  }
+  .services-side p,
+  .services-side li{
+    /*font-size: 0.83rem;*/
+    line-height: 1.6;
+  }
+
+/* PERSONAL INFO GRID
+Arranges the form fields into two equal colums*/
+ .personal-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /*two equal columns*/
+    gap: 18px 24px;   /*row gap/ column gap*/
+    padding: 10px;
+  }
+
+  .field-group{
+    display: flex;
+    flex-direction: column; /*label on top and input below it*/
+    gap: 5px;     /* small gap between label and input*/
+  }
+
+  /*makes message textarea big*/
+.field-group.full-width{
+  grid-column: 1/ -1; /*stretch from first to last column*/
+}
+
+/*labels above each input*/
+.field-group label{
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.field-group textarea{
+  resize: vertical;
+  min-height: 100px;
+}
+
+  .form-services-container{
+     display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 10px;
     }
 
-.nav-links {
-            display: flex;/* Aligns the list items horizontally*/
-            list-style: none; /* Removes the bullet points*/
-            gap: 20px; /* Add space between links;
-           }
+    /*each radio button styled as a clickable card*/
+    .services-thing{
+      display: flex;
+      align-items: center;/*vertically centers radio buttons with label*/
+      gap: 10px;
+      padding: 12px 16px;
+      border: 1.5px solid #ffffff;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color 0.4s, background 0.4s;
+      }
+      /*highlight card on hover*/
+      .sevices-thing :hover{
+        border-color: #009688;
+        background: #1fbbc7;;
+      }
 
-.nav-links a {
-              text-decoration: none;
-              color: #333
-              font-size: 0.85rem;
-              font-weight: bold;
-              text-transform: uppercase; 
-              }
+      .form-actions{
+        display: flex;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
       
-  .input-group {
-                 margin-botton: 15px;
-               }
+.btn-reset,
+.btn-submit {
+  padding: 11px 28px;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease; /* smooth color and shadow changes on hover */
+}
 
-  label {
-          dispaly: block;
-          font-weight: bold;
-          margin-bottom: 5px;
-        }
 
-input, textarea {
-                  width: 100%;
-                  padding: 10px;
-                  border: 1px solid #ccc;
-                  cursor: pointer;
-                  font-weight: bold;
-                }
 
-.btn  {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 20px;
-        curser: pointer;
-        font-weight: bold;
-      }
+/* Reset button - neutral grey style */
+.btn-reset {
+  background: #f1f1f1;
+  color: #555;
+  border: 1.5px solid #ddd;
+}
+ 
+/* Reset button hover - slightly darker grey */
+.btn-reset:hover {
+  background: #e5e5e5;
+  border-color: #bbb;
+}
 
-.btn-teal  {
-            background: #00b0a3;
-            color: white;
-           }
+/* Submit button - teal brand color */
+.btn-submit {
+  background: #009688;
+  color: #fff;
+  flex: 1;           /* grows to fill available space */
+  max-width: 220px;  /* but not wider than this */
+}
+ 
+/* Submit button hover - darker teal with a lift effect */
+.btn-submit:hover {
+  background: #00796b;
+  transform: translateY(-1px);                     /* slight upward lift */
+  box-shadow: 0 4px 12px rgba(0, 150, 136, 0.3);  /* teal glow shadow */
+}
+ 
+ 
+/* ------------------------------------------------
+   RESPONSIVE - MOBILE (screens 768px and below)
+   Switches to a single column layout so nothing
+   gets squished side by side on small screens.
+------------------------------------------------ */
+@media (max-width: 768px) {
+ 
+  /* Stack main content and sidebar vertically */
+  .services-container {
+    grid-template-columns: 1fr; /* single column */
+    padding: 20px 15px;         /* reduced padding on small screens */
+  }
+ 
+  /* Stack form fields vertically, one per row */
+  .personal-info,
+  .form-services-container {
+    grid-template-columns: 1fr;
+  }
+ 
+  /* Submit button stretches full width on mobile */
+  .btn-submit {
+    max-width: 100%;
+  }
+}
 
-.btn-gray {
-            background: #eee;
-          }
 
-footer {
-          background: #fbbc7;
-          padding: 30px 5%;
-          margin-top: 40px;
-        }
+input [type = "reset"],input [type = "reset"] {
+  width: 150px; /* Sets a specific, normal width*/
+  padding: 12px 20px; /*adds space inside the button*/
+  margin: 20px 10px ;/* adds space around th button*/
+  border: none;/* removes the default border*/
+  border-radius: 5px;/* rounds the corners slightly*/
+  font-size: 16px;
+  font-weight: bold;  
+  cursor: pointer;/* shows a hand icon on hover*/
+  transition: all 0.3s ease;/*makes color to change smooth*/
+  }
 
-.footer-flex {
-          display: flex;
-          flex-wrap: wrap; 
-          justify-content: space-between;
-          gap: 20px;
-      }
-.footer-item {
-                flex: 1;
-                min-width:200px;
-              }
+  .feedback{
+    border-right: 1px solid #0b0000;
 
-@media (max-width: 600px) {
-                            nav {flex-direction: column;}
-                            .nav-links {margin-top: 10px;}
-                          }
+  }
+  
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .search {
+    margin-top: 10px;
+  }
+  .main-content {
+    padding: 10px;
+  }
+}
+
+
+.carousel-caption{
+  position: absolute !important;
+  bottom: 20px !important;
+  right: 70% !important;
+}
+
+.carousel-item{
+  position: relative !important;
+}
+
+
+
+/* 
+    CAROUSEL STYLES
+   Add these to your style.css file
+   ================================================ */
+
+
+/* ------------------------------------------------
+   CAROUSEL WRAPPER
+   Sets the size of the whole slideshow area.
+------------------------------------------------ */
+.carousel {
+  width: 100%;
+  height: 500px;         /* height of the slideshow */
+  overflow: hidden;      /* hides anything outside the box */
+  position: relative;    /* needed for caption positioning */
+}
+
+
+/* ------------------------------------------------
+   CAROUSEL IMAGES
+   Makes each image fill the full carousel area.
+------------------------------------------------ */
+.carousel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;     /* fills the space without stretching */
+  object-position: center; /* centers the image */
+}
+
+
+/* ------------------------------------------------
+   DARK OVERLAY
+   Adds a dark transparent layer over each image
+   so the white text is easy to read.
+------------------------------------------------ */
+.carousel-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* dark overlay, 45% opacity */
+}
+
+
+/* ------------------------------------------------
+   CAPTION BOX
+   Positions the text on the left side of the image,
+   vertically centered.
+------------------------------------------------ */
+.carousel-caption {
+  position: absolute;
+  bottom: auto;           /* removes default bottom positioning */
+  top: 50%;               /* starts at middle of carousel */
+  transform: translateY(-50%); /* perfectly centers it vertically */
+  left: 5%;              /* pushes text to the left side */
+  text-align: left;      /* left-aligned text */
+  z-index: 10;           /* sits above the dark overlay */
+  max-width: 50%;        /* stops text from going too wide */
+}
+
+
+/* ------------------------------------------------
+   CAPTION HEADING
+   Large bold service name text.
+------------------------------------------------ */
+.carousel-caption h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* subtle shadow for readability */
+}
+
+
+/* ------------------------------------------------
+   CAPTION PARAGRAPH
+   Smaller description text below the heading.
+------------------------------------------------ */
+.carousel-caption p {
+  font-size: 0.95rem;
+  color: #e0e0e0;         /* slightly off-white */
+  margin-bottom: 20px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ------------------------------------------------
+   APPLY BUTTON inside the caption
+   Teal button matching your site's brand color.
+------------------------------------------------ */
+.carousel-caption .btn-apply {
+  display: inline-block;
+  padding: 10px 28px;
+  background: #009688;       /* teal brand color */
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;     /* removes underline from the link */
+  border-radius: 25px;       /* rounded pill shape like the mockup */
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-caption .btn-apply:hover {
+  background: #00796b;       /* darker teal on hover */
+  transform: translateY(-2px); /* slight lift on hover */
+}
+
+
+/* ------------------------------------------------
+   PREV / NEXT ARROW BUTTONS
+   Styled to match site colors.
+------------------------------------------------ */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 45px;
+  height: 45px;
+  background: rgba(0, 150, 136, 0.7); /* semi-transparent teal */
+  border-radius: 50%;                  /* circular button */
+  top: 50%;                            /* vertically centered */
+  transform: translateY(-50%);
+  opacity: 1;
+}
+
+.carousel-control-prev {
+  left: 15px; /* distance from left edge */
+}
+
+.carousel-control-next {
+  right: 15px; /* distance from right edge */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: #009688; /* solid teal on hover */
+}
+
+
+/* ------------------------------------------------
+   INDICATOR DOTS
+   The dots at the bottom that show which slide
+   you are on.
+------------------------------------------------ */
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;          /* round dots */
+  background: rgba(255, 255, 255, 0.5); /* faded white when inactive */
+  border: none;
+  margin: 0 4px;
+}
+
+.carousel-indicators button.active {
+  background: #009688;         /* teal for the active dot */
+}
+
+
+/* ------------------------------------------------
+   RESPONSIVE - MOBILE
+   Shrinks carousel and text on small screens.
+------------------------------------------------ */
+@media (max-width: 768px) {
+
+  .carousel,
+  .carousel-item img {
+    height: 300px; /* shorter on mobile */
+  }
+
+  .carousel-caption {
+    max-width: 80%; /* allows more text width on small screens */
+  }
+
+  .carousel-caption h3 {
+    font-size: 1.3rem; /* smaller heading on mobile */
+  }
+
+  .carousel-caption p {
+    font-size: 0.82rem;
+  }
+}
