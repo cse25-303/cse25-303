@@ -1,137 +1,88 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONAMENG SECURITY COMPANY</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCTV Installation - MONAMENG SECURITY COMPANY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <!--logo code-->
-        <div class="logo"> 
-        <img src="images/logo.png" alt="Company logo" width="30%" height="20%">
-         </div>
+  <header>
+    <div class="logo"><img src="images/logo.png" alt="Monameng Security Company logo"></div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+    <form class="search" onsubmit="return runSearch()">
+      <input type="text" id="search-input" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </header>
 
-         <!--navigation bar-->
-        <nav class="nav">
-
-         <ul>      
-                <li> <a href="index.html">Home</a></li>  <!--home page-->
-
-                <li> <a href="about.html">About</a></li>  <!--about page-->
-
-                <!--services page-->
-                <li> <a href = "services.html" class = "active ">Services</a> </li>
-
-                <li> <a href="apply.html">Apply</a></li> <!--apply page-->
-
-                <li> <a href="projects.html">Projects</a></li> <!--projects page-->
-
-                <li> <a href="feedback.html">Feedback</a></li>  <!--feedback page-->
-            </ul>
-        </nav>
-
-        <!--right: search bar-->
-        <form action="" class="search" onsubmit="return runSearch()">
-
-            <input type="text" id="search-input" placeholder="Search.." name="search" required>
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </header>
-
-
-
-
-
-    <section class ="services-container">
-
-    <main class = "services-main-contents">
-        
-   
-            <img src = "images/cameras.jpg" alt = "picture of a cctv camera" class = "main-image">
-        <!--<img src = "CCTV Installation.png" alt = "picture of a cctv camera"  width = "50%" height="50%-->
-    
-
-       
-        <h3>CCTV INSTALLATION</h3>
-            <p>
-                Monameng security company have expetise that install various CCTV cameras for residents, companies, indusries,
-                factories and any gorvement premises.
-                We do not only install them we monitor them on daily basis so to dectect crime or anything that could not be seen by humans.
-                Well we do not only focus in installing and monitoring but we also check if they are working maintain them to give users piece of mind.Example
-                of CCTV in are Thermal CCTVS,Dome cameras, Bullet camera and corvet cameras.<br> 
-            </p>
-    
-        
+  <div class="page-layout">
+    <main class="page-main">
+      <img src="images/cameras.jpg" alt="CCTV cameras" class="main-image">
+      <h3>CCTV INSTALLATION</h3>
+      <p>Monameng Security Company has expertise in installing various CCTV cameras for residents, companies, industries, factories, and government premises. We do not only install them — we monitor them on a daily basis to detect crime or anything that cannot be seen by the human eye.</p>
+      <p>We also maintain all installed equipment to give users peace of mind. Examples of CCTV systems we offer include Thermal CCTVs, Dome cameras, Bullet cameras, and Covert cameras.</p>
+      <p><a href="apply.html" style="color:#009688;font-weight:600;">Apply for CCTV Installation &rarr;</a></p>
     </main>
-       <aside class = "sevices-side">
-          <h3>OUR SERVICES</h3> 
-           <ul>
-                <div> <li><a href = "cctvInstallation.html">CCTV INSTALLATION</a></li>
-                     <img src = "image/CCTVS.png" alt = "picture of a cctv camera"  width = "50%" height="50%">
-                 </div>
-               
-               <div> <li><a href = "armedResponse.html">ARMED RESPONSE </a></li>
-                     <img src = "image/Armed.png" alt = "picture of armed response team"  width = "50%" height="50%">
-                 </div>
-               
-               <div> <li><a href = "alarms.html">ALARMS </a></li>
-                     <img src = "image/Alarms.png" alt = "picture of alarm"  width = "50%" height="50%">
-                 </div>
-               
-               <div> 
-                   <li><a href = "accessControl.html">ACCESS CONTROL</a></li>
-                   <img src = "image/Access control.png" alt = "picture of a access contol device"  width = "50%" height="50%">
-               </div>
-                 
-           </ul>
-       </aside> 
-       </section>       
-       <footer class="foot">
+    <aside class="page-side">
+      <h3>Our Services</h3>
+      <ul>
+        <li><a href="cctvInstallation.html">CCTV Installation</a></li>
+        <li><a href="armedResponse.html">Armed Response</a></li>
+        <li><a href="alarms.html">Alarms</a></li>
+        <li><a href="accessControl.html">Access Control</a></li>
+      </ul>
+      <h5>24/7 Monitoring</h5>
+      <p>All CCTV systems are linked to our centralized Command Center.</p>
+      <h5>Maintenance</h5>
+      <p>Scheduled audits and checks to keep systems running perfectly.</p>
+    </aside>
+  </div>
 
-            <div class="footer-top">
-
-                <section class="footer-item">
-                    <h3>CONTACT</h3>
-                    <ul>
-                        <li>Phone:+267 73772112</li>
-                        <li> Email:<a
-                                href="mailto:monamengsecuritycomapany@gmail.com">monamengsecuritycomapany@gmail.com</a>
-                        </li>
-                        <li> Location:Molepolole, Botswana </li>
-                    </ul>
-                </section>
-
-                <section class="footer-item">
-                    <h3>LEGAL</h3>
-                    <ul>
-                        <li> <a href="legal.html">Terms and coditions</a></li>
-                        <li> <a href="legal.html">Disclaimer</a></li>
-                        <li> <a href="legal.html">Website usage policy</a></li>
-                    </ul>
-                </section>
-
-                <section class="footer-item">
-                    <h3>PRIVACY</h3>
-                    <ul>
-                        <li> <a href="privacy.html">Privacy policy</a></li>
-                        <li> <a href="privacy.html">Cookie policy</a></li>
-                        <li> <a href="privacy.html">Data Protection Notice</a></li>
-                    </ul>
-                </section>
-
-                <div class="footer-bottom">
-                    <p>&copy; Copyright 2026 Monameng. All rights reserved</p>
-                </div>
-
-        </footer>
-         <script src="formvalidation.js"></script>
+  <footer class="foot">
+    <div class="footer-top">
+      <section class="footer-item">
+        <h3>CONTACT</h3>
+        <ul>
+          <li>Phone: +267 73772112</li>
+          <li>Email: <a href="mailto:monamengsecuritycomapany@gmail.com">monamengsecuritycomapany@gmail.com</a></li>
+          <li>Location: Molepolole, Botswana</li>
+        </ul>
+      </section>
+      <section class="footer-item">
+        <h3>LEGAL</h3>
+        <ul>
+          <li><a href="legal.html">Terms and Conditions</a></li>
+          <li><a href="legal.html">Disclaimer</a></li>
+          <li><a href="legal.html">Website Usage Policy</a></li>
+        </ul>
+      </section>
+      <section class="footer-item">
+        <h3>PRIVACY</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="privacy.html">Cookie Policy</a></li>
+          <li><a href="privacy.html">Data Protection Notice</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Copyright 2026 Monameng Security Company. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="formvalidation.js"></script>
 </body>
-
 </html>

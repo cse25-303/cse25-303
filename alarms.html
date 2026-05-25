@@ -1,134 +1,88 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONAMENG SECURITY COMPANY</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alarms - MONAMENG SECURITY COMPANY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <!--logo code-->
-        <div class="logo"> 
-        <img src="images/logo.png" alt="Company logo" width="30%" height="20%">
-         </div>
+  <header>
+    <div class="logo"><img src="images/logo.png" alt="Monameng Security Company logo"></div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+    <form class="search" onsubmit="return runSearch()">
+      <input type="text" id="search-input" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </header>
 
-         <!--navigation bar-->
-        <nav class="nav">
+  <div class="page-layout">
+    <main class="page-main">
+      <img src="images/Alarms.png" alt="Alarm system" class="main-image">
+      <h3>ALARM SERVICE</h3>
+      <p>Monameng Security Company provides its customers with a reliable alarm service. These alarms are monitored and maintained by the company at all times.</p>
+      <p>Our alarms are integrated with CCTV and armed response services to help protect our customers and their property in a fast and reliable way. These high-level alarms can detect intrusion and fire, and can also be activated in case of an emergency. Examples of alarms offered include smoke detectors, carbon monoxide alarms, panic alarms, and intrusion alarms.</p>
+      <p><a href="apply.html" style="color:#009688;font-weight:600;">Apply for Alarm Service &rarr;</a></p>
+    </main>
+    <aside class="page-side">
+      <h3>Our Services</h3>
+      <ul>
+        <li><a href="cctvInstallation.html">CCTV Installation</a></li>
+        <li><a href="armedResponse.html">Armed Response</a></li>
+        <li><a href="alarms.html">Alarms</a></li>
+        <li><a href="accessControl.html">Access Control</a></li>
+      </ul>
+      <h5>Integrated System</h5>
+      <p>Alarms link directly to CCTV and armed response for a complete security solution.</p>
+      <h5>Types Available</h5>
+      <p>Smoke detectors, carbon monoxide alarms, panic alarms, and intrusion alarms.</p>
+    </aside>
+  </div>
 
-         <ul>      
-                <li> <a href="index.html">Home</a></li>  <!--home page-->
-
-                <li> <a href="about.html">About</a></li>  <!--about page-->
-
-                <!--services page-->
-                <li> <a href = "services.html" class = "active ">Services</a> </li>
-
-                <li> <a href="apply.html">Apply</a></li> <!--apply page-->
-
-                <li> <a href="projects.html">Projects</a></li> <!--projects page-->
-
-                <li> <a href="feedback.html">Feedback</a></li>  <!--feedback page-->
-            </ul>
-        </nav>
-
-        <!--right: search bar-->
-        <form action="" class="search" onsubmit="return runSearch()">
-
-            <input type="text" id="search-input" placeholder="Search.." name="search" required>
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </header>
-
-
-
-
-    <section class ="services-container"> 
-     <main class = "services-main-contents">
-         
-         <div>
-             <img src = "images/Alarms.png" alt = "Picture of an alarm" class = "main-image" >
-             <!--<img src = "Alarms (2).png" alt = "Picture of an alarm" width = "50" height = "50" >-->
-         </div>
-         <h3>ALARM SERVICE</h3>
-         <p>
-             Monameng Security Company provide it's customers with reliable alarm service.
-             These alarms are monitored and maintained by the company.
-             Our alarms are intergrated with CCTV and armed response services to help in protecting our customers 
-             and their goods in a fast and reliable way.These high level alarms ca detect intrution, fire and 
-             also can be pressed in case of emergency incident.
-             Example of alarms offerd are smoke dectetors, carbon monoxide alarms, panic alarms and intrusion alarms.
-         </p>
-     </main>
-   
-       <aside class = "sevices-side">
-          <h3>OUR SERVICES</h3> 
-           <ul>
-                <div> <li><a href = "cctvInstallation.html">CCTV INSTALLATION</a></li>
-                     <img src = "image/CCTV.png" alt = "picture of a cctv camera"  width = "50%" height="50%">
-                 </div>
-               
-               <div> <li><a href = "armedResponse.html">ARMED RESPONSE </a></li>
-                     <img src = "image/Armed.png" alt = "picture of armed response team"  width = "50%" height="50%">
-                 </div>
-               
-               <div> <li><a href = "alarms.html">ALARMS </a></li>
-                     <img src = "image/Alarms.png" alt = "picture of alarm"  width = "50%" height="50%">
-                 </div>
-               
-               <div> 
-                   <li><a href = "accessControl.html">ACCESS CONTROL</a></li>
-                   <img src = "image/Access control.png" alt = "picture of a access contol device"  width = "50%" height="50%">
-               </div>
-                 
-           </ul>
-       </aside> 
-       </section>       
-        
- <footer class="foot">
-
-            <div class="footer-top">
-
-                <section class="footer-item">
-                    <h3>CONTACT</h3>
-                    <ul>
-                        <li>Phone:+267 73772112</li>
-                        <li> Email:<a
-                                href="mailto:monamengsecuritycomapany@gmail.com">monamengsecuritycomapany@gmail.com</a>
-                        </li>
-                        <li> Location:Molepolole, Botswana </li>
-                    </ul>
-                </section>
-
-                <section class="footer-item">
-                    <h3>LEGAL</h3>
-                    <ul>
-                        <li> <a href="legal.html">Terms and coditions</a></li>
-                        <li> <a href="legal.html">Disclaimer</a></li>
-                        <li> <a href="legal.html">Website usage policy</a></li>
-                    </ul>
-                </section>
-
-                <section class="footer-item">
-                    <h3>PRIVACY</h3>
-                    <ul>
-                        <li> <a href="privacy.html">Privacy policy</a></li>
-                        <li> <a href="privacy.html">Cookie policy</a></li>
-                        <li> <a href="privacy.html">Data Protection Notice</a></li>
-                    </ul>
-                </section>
-
-                <div class="footer-bottom">
-                    <p>&copy; Copyright 2026 Monameng. All rights reserved</p>
-                </div>
-
-        </footer>
-         <script src="formvalidation.js"></script>
+  <footer class="foot">
+    <div class="footer-top">
+      <section class="footer-item">
+        <h3>CONTACT</h3>
+        <ul>
+          <li>Phone: +267 73772112</li>
+          <li>Email: <a href="mailto:monamengsecuritycomapany@gmail.com">monamengsecuritycomapany@gmail.com</a></li>
+          <li>Location: Molepolole, Botswana</li>
+        </ul>
+      </section>
+      <section class="footer-item">
+        <h3>LEGAL</h3>
+        <ul>
+          <li><a href="legal.html">Terms and Conditions</a></li>
+          <li><a href="legal.html">Disclaimer</a></li>
+          <li><a href="legal.html">Website Usage Policy</a></li>
+        </ul>
+      </section>
+      <section class="footer-item">
+        <h3>PRIVACY</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="privacy.html">Cookie Policy</a></li>
+          <li><a href="privacy.html">Data Protection Notice</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Copyright 2026 Monameng Security Company. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="formvalidation.js"></script>
 </body>
 </html>
-

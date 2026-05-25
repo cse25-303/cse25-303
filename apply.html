@@ -1,181 +1,150 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONAMENG SECURITY COMPANY</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apply - MONAMENG SECURITY COMPANY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <!--logo code-->
-        <div class="logo"> 
-        <img src="images/logo.png" alt="Company logo" width="30%" height="20%">
-         </div>
 
-         <!--navigation bar-->
-        <nav class="nav">
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Monameng Security Company logo">
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="apply.html" class="active">Apply</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+    <form class="search" onsubmit="return runSearch()">
+      <input type="text" id="search-input" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </header>
 
-         <ul>      
-                <li> <a href="index.html">Home</a></li>  <!--home page-->
+  <section id="intro">
+    <h2>APPLY FOR A SERVICE</h2>
+    <p>Fill in the form below to apply for any of our security services. We will contact you within 24 hours.</p>
+  </section>
 
-                <li> <a href="about.html">About</a></li>  <!--about page-->
-                
-                <li> <a href = "services.html">Services</a> </li>     <!--services page-->
+  <div class="page-layout">
+    <main class="page-main">
+      <h3>FILL THIS FORM TO APPLY</h3>
+      <form action="" method="post" onsubmit="return validateApply()">
 
-                <li> <a href="apply.html" class = "active">Apply</a></li> <!--apply page-->
+        <div class="personal-info">
+          <div class="field-group">
+            <label for="name">Name / Company Name:</label>
+            <input type="text" id="name" name="name" placeholder="Choppies" required>
+          </div>
+          <div class="field-group">
+            <label for="place">Place:</label>
+            <input type="text" id="place" name="place" placeholder="Molepolole" required>
+          </div>
+          <div class="field-group">
+            <label for="address">Physical Address:</label>
+            <input type="text" id="address" name="address" placeholder="Private Bag 123" required>
+          </div>
+          <div class="field-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="monamengsecurity@gmail.com" required>
+          </div>
+          <div class="field-group">
+            <label for="number">Contact Number:</label>
+            <input type="tel" id="number" name="number" placeholder="+267 73476543" required>
+          </div>
+          <div class="field-group">
+            <label for="purpose">Purpose for the Service:</label>
+            <input type="text" id="purpose" name="purpose" placeholder="Personal security" required>
+          </div>
+        </div>
 
-                <li> <a href="projects.html">Projects</a></li> <!--projects page-->
+        <h4>WHAT SERVICE ARE YOU APPLYING FOR?</h4>
+        <div class="form-services-container">
+          <div class="services-thing">
+            <label for="cctv">CCTV INSTALLATION</label>
+            <input type="radio" id="cctv" name="service" value="cctv" required>
+          </div>
+          <div class="services-thing">
+            <label for="armed">ARMED RESPONSE</label>
+            <input type="radio" id="armed" name="service" value="armed response">
+          </div>
+          <div class="services-thing">
+            <label for="alarm">ALARM</label>
+            <input type="radio" id="alarm" name="service" value="alarm">
+          </div>
+          <div class="services-thing">
+            <label for="access">ACCESS CONTROL</label>
+            <input type="radio" id="access" name="service" value="access control">
+          </div>
+        </div>
 
-                <li> <a href="feedback.html">Feedback</a></li>  <!--feedback page-->
-            </ul>
-        </nav>
+        <div class="form-actions">
+          <input type="reset" class="btn-reset" value="Reset">
+          <input type="submit" class="btn-submit" value="Submit Application">
+        </div>
 
-        <!--right: search bar-->
-        <form action="" class="search" onsubmit="return validateApply()">
+      </form>
+    </main>
 
-            <input type="text" id="search-input" placeholder="Search.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </header>
+    <aside class="page-side">
+      <h3>Why Apply With Us</h3>
+      <h5>Data Privacy</h5>
+      <p>Your information is encrypted and never shared with third parties.</p>
+      <h5>Rapid Processing</h5>
+      <p>Most applications are reviewed within 24 hours.</p>
+      <h5>Certified Provider</h5>
+      <p>We are a fully licensed security firm compliant with all national safety regulations.</p>
+      <h5>Need Assistance?</h5>
+      <ul>
+        <li>Call us: +267 72783345</li>
+        <li>Email: <a href="mailto:monameng@support.com">monameng@support.com</a></li>
+      </ul>
+    </aside>
+  </div>
 
+  <footer class="foot">
+    <div class="footer-top">
+      <section class="footer-item">
+        <h3>CONTACT</h3>
+        <ul>
+          <li>Phone: +267 73772112</li>
+          <li>Email: <a href="mailto:monamengsecuritycomapany@gmail.com">monamengsecuritycomapany@gmail.com</a></li>
+          <li>Location: Molepolole, Botswana</li>
+        </ul>
+      </section>
+      <section class="footer-item">
+        <h3>LEGAL</h3>
+        <ul>
+          <li><a href="legal.html">Terms and Conditions</a></li>
+          <li><a href="legal.html">Disclaimer</a></li>
+          <li><a href="legal.html">Website Usage Policy</a></li>
+        </ul>
+      </section>
+      <section class="footer-item">
+        <h3>PRIVACY</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="privacy.html">Cookie Policy</a></li>
+          <li><a href="privacy.html">Data Protection Notice</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Copyright 2026 Monameng Security Company. All rights reserved.</p>
+    </div>
+  </footer>
 
-
-
-
-    <div class = "services-container">
-    <main class = "services-main-contents">
-           <h3>FILL THIS FORM TO APPLY</h3>
-              <form action = "" method = "post" onsubmit="return runSearch()">
-                <div class = "personal-info">
-                <section class = "field-group">
-                  <label for = "name"> Name:</label>
-                  <input type = "text" id =  "name" name = "name" placeholder = "Choppies" required> <br><br>   
-                  </section>
-
-                  <section class = "field-group">
-                  <label for = "place">Place:</label>
-                  <input type = "text" id = "place" name = "place" placeholder = "Molepolole" required> <br><br>
-                  </section>
-
-                <section class = "field-group">
-                  <label for = "address">Physical Address:</label>
-                  <input type = "text" id = "address" name = "Address" placeholder = "Private bag 123" required> <br><br>
-                 </section>
-
-                <section class = "field-group">
-                  <label for = "email"> Email Address:</label>
-                  <input type = "email" id = "email" name = "Email" placeholder = "monamengsecurity@gmail.com" required> <br><br>
-                 </section>
-
-                   <section class = "field-group">
-                  <label for = "number"> Contact Number:</label>
-                  <input type = "tel" id = "number" name = "number" placeholder = "+267 73476543" required><br><br>
-                    </section>
-
-                   <section class = "field-group">
-                   <label for = "purpose"> Purpose for the service:</label>
-                  <input type = "text" id =  "purpose" name = "purpose" placeholder = "personal security" required> <br><br>
-                  </section>
-                  </div>
-
-                <div class = "form-services-container"></div>
-                  <h4><bold>WHAT SERVICE ARE YOU APPLYING FOR</bold></h4>
-
-                    <section class = "services-thing">
-                  <label for = "cctv"> CCTV INSTALLATION</label>
-                  <input type = "radio" id = "cctv" name = "service" value = "cctv"> <br><br>
-                    </section>
-
-                    <section class = "services-thing">
-                  <label for = "armed"> ARMED RESPONSE</label>
-                  <input type = "radio" id = "armed" name = "service" value = "armed respone"><br><br>
-                 </section> 
-                       
-                    <section class = "services-thing">
-                  <label for = "alarm"> ALARM</label>
-                  <input type = "radio" id = "alarm" name = "service" value = "alarm"><br><br>
-                    </section>
-
-                 <section class = "services-thing">
-                 <label for = "access"> ACCESS CONTROL</label>
-                  <input type = "radio" id = "acces" name = "service" value = "access control"><br><br>
-                </section>
-            
-
-                <div class = form-actions>
-                  <input type = "reset" class = "btn-reset">
-                  <input type = "submit" class = "btn-submit">
-                  </div>
-                      </form>
-            </main> 
-            
-              
-      
-       <aside class = "services-side">
-           <h3>WHY APPLY WITH US</h3> 
-              <h5>DATA PRIVACY</h5> 
-                     <p>Your information is encrypted and never shared with third parties.</p>
-              <h5>RAPID PROCESSING</h5> 
-                     <p> Most applications for armed response are reviewed within 24 hours.</p>
-              <h5> CERTIFIED PROVIDER</h5> 
-                     <p> We are fully licensed security firm compliant with all national safety regulations.</p>
-              <h5>NEED ASSISTANCE?</h5>
-                     <ul>
-                           <li> Call us:72783345</li>
-                           <li>Email: monameng@support.com</li> 
-                     </ul>
-       </aside> 
-       </div>
-      
-            
-      
-    
-
-   <footer class="foot">
-
-            <div class="footer-top">
-
-                <section class="footer-item">
-                    <h3>CONTACT</h3>
-                    <ul>
-                        <li>Phone:+267 73772112</li>
-                        <li> Email:<a
-                                href="mailto:monamengsecuritycomapany@gmail.com">monamengsecuritycomapany@gmail.com</a>
-                        </li>
-                        <li> Location:Molepolole, Botswana </li>
-                    </ul>
-                </section>
-
-                <section class="footer-item">
-                    <h3>LEGAL</h3>
-                    <ul>
-                        <li> <a href="legal.html">Terms and coditions</a></li>
-                        <li> <a href="legal.html">Disclaimer</a></li>
-                        <li> <a href="legal.html">Website usage policy</a></li>
-                    </ul>
-                </section>
-
-                <section class="footer-item">
-                    <h3>PRIVACY</h3>
-                    <ul>
-                        <li> <a href="privacy.html">Privacy policy</a></li>
-                        <li> <a href="privacy.html">Cookie policy</a></li>
-                        <li> <a href="privacy.html">Data Protection Notice</a></li>
-                    </ul>
-                </section>
-
-                <div class="footer-bottom">
-                    <p>&copy; Copyright 2026 Monameng. All rights reserved</p>
-                </div>
-
-        </footer>
-        <script src="formvalidation.js"></script>
+  <script src="formvalidation.js"></script>
 </body>
-
 </html>
