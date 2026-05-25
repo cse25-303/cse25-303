@@ -1,132 +1,112 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MONAMENG SECURITY COMPANY</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - MONAMENG SECURITY COMPANY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <!--logo code-->
-        <div class="logo"> 
-        <img src="images/logo.png" alt="Company logo" width="30%" height="20%">
-         </div>
 
-         <!--navigation bar-->
-        <nav class="nav">
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Monameng Security Company logo">
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="apply.html">Apply</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+    <form class="search" onsubmit="return runSearch()">
+      <input type="text" id="search-input" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </header>
 
-         <ul>      
-                <li> <a href="index.html">Home</a></li>  <!--home page-->
+  <section id="intro">
+    <h2>CURRENT BIG PROJECTS</h2>
+    <p>Here are some of our ongoing and recently completed security projects across Botswana.</p>
+  </section>
 
-                <li> <a href="about.html">About</a></li>  <!--about page-->
+  <div class="page-layout">
+    <main class="page-main">
+      <div class="card-grid">
 
-                <li> <a href = "services.html">Services</a> </li>    <!--services page-->
+        <div class="content-card">
+          <h5>Gaborone West Industrial Complex</h5>
+          <p>High-security surveillance and alarm monitoring for a multi-warehouse logistics park.</p>
+        </div>
 
-                <li> <a href="apply.html">Apply</a></li> <!--apply page-->
+        <div class="content-card">
+          <h5>First National Bank</h5>
+          <p>Responsible for alarm and CCTV monitoring in the Bank at Mafenyatlala Mall.</p>
+        </div>
 
-                <li> <a href="projects.html" class = "active">Projects</a></li> <!--projects page-->
+        <div class="content-card">
+          <h5>Phakalane Golf Estate Private Residence</h5>
+          <p>Installed an alarm on the 20th of February in a residential home, linked to our 24/7 Alarm Response.</p>
+        </div>
 
-                <li> <a href="feedback.html">Feedback</a></li>  <!--feedback page-->
-            </ul>
-        </nav>
+        <div class="content-card">
+          <h5>Borakalalo Primary School</h5>
+          <p>Installed card readers on 10 April 2026 to allow only authorized staff members and students through the school gates.</p>
+        </div>
 
-        <!--right: search bar-->
-        <form action="" class="search" onsubmit="return runSearch()">
-
-            <input type="text" id="search-input" placeholder="Search.." name="search" required>
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </header>
-
-
-
-
-
-<h3 id = "intro">CURRENT BIG PROJECTS</h3> 
-<section class = "side-le-main">
-    <main class = "about-main-contents">
-            
-         <section class = "box">
-           <h5> Gaborone West Industrial Complex</h5> 
-            <p> High-security surveillance and alarm monitoring for a multi-warehouse logistics park.</p>
-        </section>
-
-         <section class = "box">
-           <h5>First Nation Bank</h5>
-            <p> Responsible for alarm and CCTV monitoring in the Bank at Mafenyatlala mall.</p>
-        </section>
-
-       <!--<h3> RECENT INSTALLATION</h3>*/-->
-       
-            <section class = "box">
-            <h5>Phakalane Golf Estate Private Residence</h5>
-            <p> Installed an alarm on the 20th of February in a recident home and it is linked to our 24/7 Alarm Respnse.</p>
-            </section>
-
-            <section class = "box">
-            <h5>Borakalalo Primary School</h5>
-            <p> Installed card readers on the school on 10th Aprial 2026 to allow only authorized staff members and students on the school gates.</p>
-            </section>  
-
+      </div>
     </main>
 
-    <aside class = "side">
-        <h3>SAFETY ADVICE</h3>
-            <p> Be aware of your surroundings,pay attention to people, places, and activities around you. <br>
-                Keep emergency contacts and numbers nearby.
-            </p>  
-             <a href="https://youtube.com/shorts/mX0SunmarlU?si=weIIGkKIA5M4v2CK" target="blank">
-                   <img src="images/video (2).png" alt="Watch a video of securitytips through this link" width="100%">
-                    <p>Click to watch on YouTube</p>
-             </a>     
+    <aside class="page-side">
+      <h3>Safety Advice</h3>
+      <p>Be aware of your surroundings. Pay attention to people, places, and activities around you.</p>
+      <p>Keep emergency contacts and numbers nearby.</p>
+      <a href="https://youtube.com/shorts/mX0SunmarlU?si=weIIGkKIA5M4v2CK" target="_blank">
+        <img src="images/video (2).png" alt="Watch a video of security tips on YouTube" width="100%" style="margin-top:10px;border-radius:6px;">
+        <p style="margin-top:5px;font-size:0.85rem;color:#009688;">Click to watch on YouTube</p>
+      </a>
     </aside>
-    </section>
-        
-      <footer class="foot">
+  </div>
 
-            <div class="footer-top">
+  <footer class="foot">
+    <div class="footer-top">
+      <section class="footer-item">
+        <h3>CONTACT</h3>
+        <ul>
+          <li>Phone: +267 73772112</li>
+          <li>Email: <a href="mailto:monamengsecuritycomapany@gmail.com">monamengsecuritycomapany@gmail.com</a></li>
+          <li>Location: Molepolole, Botswana</li>
+        </ul>
+      </section>
+      <section class="footer-item">
+        <h3>LEGAL</h3>
+        <ul>
+          <li><a href="legal.html">Terms and Conditions</a></li>
+          <li><a href="legal.html">Disclaimer</a></li>
+          <li><a href="legal.html">Website Usage Policy</a></li>
+        </ul>
+      </section>
+      <section class="footer-item">
+        <h3>PRIVACY</h3>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="privacy.html">Cookie Policy</a></li>
+          <li><a href="privacy.html">Data Protection Notice</a></li>
+        </ul>
+      </section>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; Copyright 2026 Monameng Security Company. All rights reserved.</p>
+    </div>
+  </footer>
 
-                <section class="footer-item">
-                    <h3>CONTACT</h3>
-                    <ul>
-                        <li>Phone:+267 73772112</li>
-                        <li> Email:<a
-                                href="mailto:monamengsecuritycomapany@gmail.com">monamengsecuritycomapany@gmail.com</a>
-                        </li>
-                        <li> Location:Molepolole, Botswana </li>
-                    </ul>
-                </section>
-
-                <section class="footer-item">
-                    <h3>LEGAL</h3>
-                    <ul>
-                        <li> <a href="legal.html">Terms and coditions</a></li>
-                        <li> <a href="legal.html">Disclaimer</a></li>
-                        <li> <a href="legal.html">Website usage policy</a></li>
-                    </ul>
-                </section>
-
-                <section class="footer-item">
-                    <h3>PRIVACY</h3>
-                    <ul>
-                        <li> <a href="privacy.html">Privacy policy</a></li>
-                        <li> <a href="privacy.html">Cookie policy</a></li>
-                        <li> <a href="privacy.html">Data Protection Notice</a></li>
-                    </ul>
-                </section>
-
-                <div class="footer-bottom">
-                    <p>&copy; Copyright 2026 Monameng. All rights reserved</p>
-                </div>
-
-        </footer>
-         <script src="formvalidation.js"></script>
+  <script src="formvalidation.js"></script>
 </body>
-
 </html>

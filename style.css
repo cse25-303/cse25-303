@@ -2,331 +2,380 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* Reset some default spacing */
   font-family: Arial, sans-serif;
 }
-/*this is for the header*/
+
+/* ================================================
+   HEADER
+   ================================================ */
 header {
-  display: flex;         /* align content horizontally*/
-  justify-content: space-between;    /* pushes items apart (logo on the far left, search far right)*/
-  align-items: center;  /*vertically centers all three sections*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
+  padding: 8px 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.logo{
-  flex: 1;  /* takes  1 share(small, left) of the header width*/
+.logo {
+  flex: 0 0 auto;
 }
 
-.nav{
-  flex:2;               /* takes 2 shares - more room to the center*/
+.logo img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+.nav {
+  flex: 2;
   display: flex;
-  justify-content: center;   /*centers the <ul> inside the .nav */
-  }  
-
-  .search {
-  flex: 1;
-  display: flex;
- /* align-items: center;*/
-  justify-content: flex-end; /* pushes search to the far right*/
+  justify-content: center;
 }
 
-/*horizontal row of links (NAV LIST)*/
+.search {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* NAV LIST */
 .nav ul {
   display: flex;
-  list-style: none;  /* removes bullet points*/
-  gap: 20px; /* space between each link*/
-  /*margin: 0;
-  padding: 0;*/
+  list-style: none;
+  gap: 4px;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav a {
   text-decoration: none;
-  color: #0b0000;;
-  font-size: 0.85rem;
+  color: #0b0000;
+  font-size: 0.82rem;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 5px 10px;
-  transition: all 0.3s ease; /* smooth color change on hover*/
+  padding: 6px 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  display: block;
+  white-space: nowrap;
 }
 
- .nav ul li a.active {
+.nav ul li a.active {
   background-color: #1fbbc7;
   color: white;
-  border-radius: 20px;
 }
 
-/*hover and focus state*/
 .nav a:hover,
- .nav a :focus,
- .nav a .active {
+.nav a:focus {
   background-color: #1fbbc7;
   color: white;
-  border-radius: 20px;
 }
 
+/* SEARCH */
 .search input {
-  padding: 5px 10px;
+  padding: 6px 10px;
   border: 1px solid #0b0000;
-  border-radius: 3px 0 0 3px; /*rounded only on the left*/
- font-size: 0.82rem;
+  border-radius: 3px 0 0 3px;
+  font-size: 0.82rem;
   outline: none;
+  width: 140px;
 }
-.search input[type = "text"] :focus {
+
+.search input:focus {
   border-color: #1fbbc7;
 }
 
 .search button {
-  padding: 5px 10px;
-  border: none;
+  padding: 6px 10px;
+  border: 1px solid #0b0000;
+  border-left: none;
   background-color: #ffffff;
   color: #0b0000;
-  border-radius: 0 3px 3px 0;/* rounded only on left side*/
+  border-radius: 0 3px 3px 0;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.search button:hover, 
+.search button:hover,
 .search button:focus {
   background-color: #1fbbc7;
   color: white;
+  border-color: #1fbbc7;
 }
 
-
-
-/*main content in the home page*/
-.main-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  /*min-height: 800vh;*/
-  padding: 20px;
-  box-sizing: border-box;
-  
+/* ================================================
+   PAGE INTRO BANNER (used on services, about, etc)
+   ================================================ */
+#intro {
+  background-color: #f4f4f4 !important;
+  background: #f4f4f4 !important;
+  padding: 20px 30px;
+  border-left: 5px solid #1fbbc7;
+  margin: 20px 30px;
+  border-radius: 4px;
 }
 
-.content-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
+#intro h2,
+#intro h3,
+#intro p {
+  margin-bottom: 8px;
+  color: #0b0000 !important;
 }
- 
-/*The footer style*/
-.foot {
-  background-color: #1fbbc7;
+
+/* Force all headings black throughout — overrides Bootstrap */
+h1, h2, h3, h4, h5, h6 {
   color: #0b0000;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
 }
 
-.footer-top{
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 3rem;
+/* EXCEPTION: sidebar headings get teal underline but black text */
+.page-side h3 {
+  color: #0b0000;
 }
 
-.footer-item h3 {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
+/* EXCEPTION: footer headings stay black (already on teal bg) */
+.foot h3 {
+  color: #0b0000;
 }
 
-.footer-item ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-item a {
-  text-decoration: none;
-}
-
-.footer-item li {
-   margin-bottom: 0.4rem;
-}
-
-.footer-item a :hover, 
-.footer-item a :focus{
-    text-decoration: underline;
-   /* outline: 2px solid #ffffff;*/
-   /* outline-offset: 2px;*/
-}
-.footer-bottom{
-  width: 100%;
-  text-align: center;
-  padding-top: 1rem;
-}
-
-/* main content on about page and related pages*/
-.side-le-main{
-  display: grid !important;
-  grid-template-columns: 1fr 250px;
+/* ================================================
+   UNIVERSAL TWO-COLUMN LAYOUT
+   Used on: about, services overview, projects,
+            apply, feedback, cctv, armed, alarms,
+            access control, legal
+   ================================================ */
+.page-layout {
+  display: grid;
+  grid-template-columns: 1fr 260px;
   gap: 30px;
-  padding: 15px;
+  padding: 20px 30px;
   align-items: start;
   width: 100%;
+  box-sizing: border-box;
 }
 
-.about-main-contents{
+/* MAIN content area */
+.page-main {
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+/* SIDEBAR */
+.page-side {
+  padding: 15px;
+}
+
+.page-side h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #1fbbc7;
+}
+
+.page-side h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 14px 0 4px;
+  color: #009688;
+}
+
+.page-side p,
+.page-side li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.page-side ul {
+  list-style: none;
+  padding: 0;
+}
+
+.page-side ul li a {
+  text-decoration: none;
+  color: #0b0000;
+  font-size: 0.88rem;
+  display: block;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+  transition: color 0.2s;
+}
+
+.page-side ul li a:hover {
+  color: #009688;
+}
+
+/* ================================================
+   CONTENT CARDS (boxes inside .page-main)
+   ================================================ */
+.card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  border-right: 1px solid #0b0000;
-   padding-right: 30px;
-  /*width: 20%;*/
 }
 
-
-#intro {
-  max-width: 80%;
-  padding: 1%;
-  margin: 2%;
- 
-  }
-
-.side{
-  padding: 15px;
-  
+.content-card {
+  padding: 16px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background: #fafafa;
 }
 
-.box{
-  padding: 1%;
-  margin: 2%;
-  max-width: 80%;
+.content-card h3,
+.content-card h5 {
+  margin-bottom: 10px;
+  color: #0b0000 !important;
 }
 
-.services{
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-}
-/*form style*/
-.services-container{
-  display: grid;
-  grid-template-columns: 3fr 1fr;  /* main section is wider than sidebar*/
-  gap: 30px;       /*space between main and sidebar*/ 
-  padding: 40px 30px;   /*space around the whole section*/
- /* max-width: 1100px;*/  /*stops layout from stretching too wide*/
-  /*margin: 0 auto;  */ /*centers the container on the page*/
+.content-card p,
+.content-card ul {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #333;
 }
 
-.services-main-contents{
-  padding:15px;
-  border-right: 1px solid #0b0000;
+.content-card ul {
+  padding-left: 18px;
 }
 
-.main-image{
+.content-card a {
+  color: #009688;
+  font-weight: 600;
+}
+
+/* ================================================
+   SERVICE DETAIL PAGES (cctv, armed, alarms, access)
+   ================================================ */
+.main-image {
   width: 100%;
   height: 300px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 16px;
   display: block;
- 
 }
 
-
-.services-main-contents h3,
-.services-main-contents h4{
-  font-size: 1.4rem;
+.page-main h3 {
+  font-size: 1.3rem;
   font-weight: 700;
-  margin-bottom: 25px;
-  padding-right: 12px;
-  
-}*/
-
-  .services-side{
-    padding: 15px;
-   /* border-radius: 10px;*/
-    padding: 25px 20px;
-   /*box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);*/
-    height: fit-content;
-  }
-
-  .services-side h3{
-    font-size: 1rem;
-    font-weight: 700;
-    margin-top: 16px;
-    padding-bottom: 10px;
-  }
-
-  .services-side h5{
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin: 14px 0 4px;
-  }
-  .services-side p,
-  .services-side li{
-    /*font-size: 0.83rem;*/
-    line-height: 1.6;
-  }
-
-/* PERSONAL INFO GRID
-Arranges the form fields into two equal colums*/
- .personal-info{
-    display: grid;
-    grid-template-columns: 1fr 1fr;  /*two equal columns*/
-    gap: 18px 24px;   /*row gap/ column gap*/
-    padding: 10px;
-  }
-
-  .field-group{
-    display: flex;
-    flex-direction: column; /*label on top and input below it*/
-    gap: 5px;     /* small gap between label and input*/
-  }
-
-  /*makes message textarea big*/
-.field-group.full-width{
-  grid-column: 1/ -1; /*stretch from first to last column*/
+  margin: 16px 0 10px;
 }
 
-/*labels above each input*/
-.field-group label{
+.page-main h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 14px 0 8px;
+}
+
+.page-main p {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* ================================================
+   FORMS (apply + feedback)
+   ================================================ */
+.page-main form h3 {
+  margin-bottom: 16px;
+}
+
+.personal-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.field-group label {
   font-size: 0.82rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 
-.field-group textarea{
+.field-group input,
+.field-group textarea,
+.field-group select {
+  padding: 9px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.field-group input:focus,
+.field-group textarea:focus {
+  border-color: #1fbbc7;
+}
+
+.field-group textarea {
   resize: vertical;
   min-height: 100px;
 }
 
-  .form-services-container{
-     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 10px;
-    }
+/* Service radio cards */
+.form-services-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
 
-    /*each radio button styled as a clickable card*/
-    .services-thing{
-      display: flex;
-      align-items: center;/*vertically centers radio buttons with label*/
-      gap: 10px;
-      padding: 12px 16px;
-      border: 1.5px solid #ffffff;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: border-color 0.4s, background 0.4s;
-      }
-      /*highlight card on hover*/
-      .sevices-thing :hover{
-        border-color: #009688;
-        background: #1fbbc7;;
-      }
+.services-thing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 16px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s, background 0.3s;
+}
 
-      .form-actions{
-        display: flex;
-        gap: 12px;
-        margin-top: 28px;
-      }
+.services-thing:hover {
+  border-color: #1fbbc7;
+  background: #e8f9fb;
+}
 
-      
+.services-thing label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Form buttons */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
 .btn-reset,
 .btn-submit {
   padding: 11px 28px;
@@ -335,295 +384,396 @@ Arranges the form fields into two equal colums*/
   font-weight: 600;
   cursor: pointer;
   border: none;
-  transition: all 0.2s ease; /* smooth color and shadow changes on hover */
+  transition: all 0.2s ease;
 }
 
-
-
-/* Reset button - neutral grey style */
 .btn-reset {
   background: #f1f1f1;
   color: #555;
   border: 1.5px solid #ddd;
 }
- 
-/* Reset button hover - slightly darker grey */
+
 .btn-reset:hover {
   background: #e5e5e5;
   border-color: #bbb;
 }
 
-/* Submit button - teal brand color */
 .btn-submit {
   background: #009688;
   color: #fff;
-  flex: 1;           /* grows to fill available space */
-  max-width: 220px;  /* but not wider than this */
+  flex: 1;
+  max-width: 220px;
 }
- 
-/* Submit button hover - darker teal with a lift effect */
+
 .btn-submit:hover {
   background: #00796b;
-  transform: translateY(-1px);                     /* slight upward lift */
-  box-shadow: 0 4px 12px rgba(0, 150, 136, 0.3);  /* teal glow shadow */
-}
- 
- 
-/* ------------------------------------------------
-   RESPONSIVE - MOBILE (screens 768px and below)
-   Switches to a single column layout so nothing
-   gets squished side by side on small screens.
------------------------------------------------- */
-@media (max-width: 768px) {
- 
-  /* Stack main content and sidebar vertically */
-  .services-container {
-    grid-template-columns: 1fr; /* single column */
-    padding: 20px 15px;         /* reduced padding on small screens */
-  }
- 
-  /* Stack form fields vertically, one per row */
-  .personal-info,
-  .form-services-container {
-    grid-template-columns: 1fr;
-  }
- 
-  /* Submit button stretches full width on mobile */
-  .btn-submit {
-    max-width: 100%;
-  }
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 150, 136, 0.3);
 }
 
-
-input [type = "reset"],input [type = "reset"] {
-  width: 150px; /* Sets a specific, normal width*/
-  padding: 12px 20px; /*adds space inside the button*/
-  margin: 20px 10px ;/* adds space around th button*/
-  border: none;/* removes the default border*/
-  border-radius: 5px;/* rounds the corners slightly*/
-  font-size: 16px;
-  font-weight: bold;  
-  cursor: pointer;/* shows a hand icon on hover*/
-  transition: all 0.3s ease;/*makes color to change smooth*/
-  }
-
-  .feedback{
-    border-right: 1px solid #0b0000;
-
-  }
-  
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .nav ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .search {
-    margin-top: 10px;
-  }
-  .main-content {
-    padding: 10px;
-  }
-}
-
-
-.carousel-caption{
-  position: absolute !important;
-  bottom: 20px !important;
-  right: 70% !important;
-}
-
-.carousel-item{
-  position: relative !important;
-}
-
-
-
-/* 
-    CAROUSEL STYLES
-   Add these to your style.css file
+/* ================================================
+   LEGAL / SIMPLE TEXT PAGE
    ================================================ */
+.text-page {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px 30px;
+}
 
+.text-page h2 {
+  margin-bottom: 20px;
+  border-bottom: 3px solid #1fbbc7;
+  padding-bottom: 8px;
+}
 
-/* ------------------------------------------------
-   CAROUSEL WRAPPER
-   Sets the size of the whole slideshow area.
------------------------------------------------- */
+.text-page h3 {
+  margin: 20px 0 8px;
+  font-size: 1.1rem;
+}
+
+.text-page p {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* ================================================
+   HOME PAGE
+   ================================================ */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 0;
+}
+
+.content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.content-wrapper h1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.content-wrapper h3 {
+  font-size: 1rem;
+  margin-bottom: 14px;
+  color: #444;
+}
+
+.content-wrapper p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: #333;
+}
+
+/* ================================================
+   CAROUSEL
+   ================================================ */
 .carousel {
   width: 100%;
-  height: 500px;         /* height of the slideshow */
-  overflow: hidden;      /* hides anything outside the box */
-  position: relative;    /* needed for caption positioning */
+  height: 500px;
+  overflow: hidden;
+  position: relative;
 }
 
-
-/* ------------------------------------------------
-   CAROUSEL IMAGES
-   Makes each image fill the full carousel area.
------------------------------------------------- */
 .carousel-item img {
   width: 100%;
   height: 500px;
-  object-fit: cover;     /* fills the space without stretching */
-  object-position: center; /* centers the image */
+  object-fit: cover;
+  object-position: center;
 }
 
-
-/* ------------------------------------------------
-   DARK OVERLAY
-   Adds a dark transparent layer over each image
-   so the white text is easy to read.
------------------------------------------------- */
 .carousel-item::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45); /* dark overlay, 45% opacity */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.45);
 }
 
-
-/* ------------------------------------------------
-   CAPTION BOX
-   Positions the text on the left side of the image,
-   vertically centered.
------------------------------------------------- */
 .carousel-caption {
-  position: absolute;
-  bottom: auto;           /* removes default bottom positioning */
-  top: 50%;               /* starts at middle of carousel */
-  transform: translateY(-50%); /* perfectly centers it vertically */
-  left: 5%;              /* pushes text to the left side */
-  text-align: left;      /* left-aligned text */
-  z-index: 10;           /* sits above the dark overlay */
-  max-width: 50%;        /* stops text from going too wide */
+  position: absolute !important;
+  bottom: auto !important;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 5%;
+  right: auto;
+  text-align: left;
+  z-index: 10;
+  max-width: 50%;
 }
 
-
-/* ------------------------------------------------
-   CAPTION HEADING
-   Large bold service name text.
------------------------------------------------- */
 .carousel-caption h3 {
   font-size: 2rem;
   font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
   margin-bottom: 10px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* subtle shadow for readability */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
 }
 
-
-/* ------------------------------------------------
-   CAPTION PARAGRAPH
-   Smaller description text below the heading.
------------------------------------------------- */
 .carousel-caption p {
   font-size: 0.95rem;
-  color: #e0e0e0;         /* slightly off-white */
+  color: #e0e0e0;
   margin-bottom: 20px;
   line-height: 1.6;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
-
-/* ------------------------------------------------
-   APPLY BUTTON inside the caption
-   Teal button matching your site's brand color.
------------------------------------------------- */
 .carousel-caption .btn-apply {
   display: inline-block;
   padding: 10px 28px;
-  background: #009688;       /* teal brand color */
+  background: #009688;
   color: #ffffff;
   font-size: 0.95rem;
   font-weight: 600;
-  text-decoration: none;     /* removes underline from the link */
-  border-radius: 25px;       /* rounded pill shape like the mockup */
+  text-decoration: none;
+  border-radius: 25px;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .carousel-caption .btn-apply:hover {
-  background: #00796b;       /* darker teal on hover */
-  transform: translateY(-2px); /* slight lift on hover */
+  background: #00796b;
+  transform: translateY(-2px);
 }
 
-
-/* ------------------------------------------------
-   PREV / NEXT ARROW BUTTONS
-   Styled to match site colors.
------------------------------------------------- */
 .carousel-control-prev,
 .carousel-control-next {
   width: 45px;
   height: 45px;
-  background: rgba(0, 150, 136, 0.7); /* semi-transparent teal */
-  border-radius: 50%;                  /* circular button */
-  top: 50%;                            /* vertically centered */
+  background: rgba(0,150,136,0.7);
+  border-radius: 50%;
+  top: 50%;
   transform: translateY(-50%);
   opacity: 1;
 }
 
-.carousel-control-prev {
-  left: 15px; /* distance from left edge */
-}
-
-.carousel-control-next {
-  right: 15px; /* distance from right edge */
-}
+.carousel-control-prev { left: 15px; }
+.carousel-control-next { right: 15px; }
 
 .carousel-control-prev:hover,
-.carousel-control-next:hover {
-  background: #009688; /* solid teal on hover */
-}
+.carousel-control-next:hover { background: #009688; }
 
-
-/* ------------------------------------------------
-   INDICATOR DOTS
-   The dots at the bottom that show which slide
-   you are on.
------------------------------------------------- */
 .carousel-indicators button {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;          /* round dots */
-  background: rgba(255, 255, 255, 0.5); /* faded white when inactive */
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
   border: none;
   margin: 0 4px;
 }
 
-.carousel-indicators button.active {
-  background: #009688;         /* teal for the active dot */
+.carousel-indicators button.active { background: #009688; }
+
+/* ================================================
+   FOOTER
+   ================================================ */
+.foot {
+  background-color: #1fbbc7;
+  color: #0b0000;
+  padding: 2rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 40px;
 }
 
+.footer-top {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 1rem;
+}
 
-/* ------------------------------------------------
-   RESPONSIVE - MOBILE
-   Shrinks carousel and text on small screens.
------------------------------------------------- */
+.footer-item h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.footer-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-item li {
+  margin-bottom: 0.4rem;
+  font-size: 0.88rem;
+}
+
+.footer-item a {
+  text-decoration: none;
+  color: #0b0000;
+}
+
+.footer-item a:hover,
+.footer-item a:focus {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.15);
+  font-size: 0.85rem;
+}
+
+/* ================================================
+   RESPONSIVE — TABLET (max 900px)
+   ================================================ */
+@media (max-width: 900px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+
+  .page-main {
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ================================================
+   RESPONSIVE — MOBILE (max 768px)
+   ================================================ */
 @media (max-width: 768px) {
 
+  /* Header stacks vertically */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .logo img {
+    width: 90px;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .nav ul {
+    flex-wrap: wrap;
+    gap: 4px;
+    justify-content: flex-start;
+  }
+
+  .nav a {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .search input {
+    flex: 1;
+    width: auto;
+  }
+
+  /* Carousel */
   .carousel,
   .carousel-item img {
-    height: 300px; /* shorter on mobile */
+    height: 260px;
   }
 
   .carousel-caption {
-    max-width: 80%; /* allows more text width on small screens */
+    max-width: 80%;
   }
 
   .carousel-caption h3 {
-    font-size: 1.3rem; /* smaller heading on mobile */
+    font-size: 1.2rem;
   }
 
   .carousel-caption p {
+    font-size: 0.78rem;
+    display: none; /* hide on very small screens */
+  }
+
+  /* Page layout single column */
+  .page-layout {
+    grid-template-columns: 1fr;
+    padding: 12px;
+    gap: 16px;
+  }
+
+  .page-main {
+    border-right: none;
+  }
+
+  /* Cards single column */
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Forms single column */
+  .personal-info,
+  .form-services-container {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-submit {
+    max-width: 100%;
+  }
+
+  /* Intro */
+  #intro {
+    margin: 10px;
+    padding: 14px;
+  }
+
+  /* Text page */
+  .text-page {
+    margin: 10px;
+    padding: 14px;
+  }
+
+  /* Footer */
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* ================================================
+   RESPONSIVE — SMALL MOBILE (max 480px)
+   ================================================ */
+@media (max-width: 480px) {
+  .carousel,
+  .carousel-item img {
+    height: 200px;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1rem;
+  }
+
+  .carousel-caption .btn-apply {
+    padding: 7px 16px;
     font-size: 0.82rem;
+  }
+
+  .content-wrapper h1 {
+    font-size: 1.2rem;
   }
 }
