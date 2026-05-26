@@ -12,11 +12,13 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="images/logo.png" alt="Monameng Security Company logo">
+  <header class="site-header">
+    <div class="site-logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Monameng Security Company logo" width="120" height="60">
+      </a>
     </div>
-    <nav class="nav">
+    <nav class="site-nav" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -26,13 +28,14 @@
         <li><a href="feedback.html">Feedback</a></li>
       </ul>
     </nav>
-    <form class="search" onsubmit="return runSearch()">
+    <form class="site-search" onsubmit="return runSearch()" role="search">
+      <label for="search-input" class="visually-hidden">Search</label>
       <input type="text" id="search-input" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
+      <button type="submit" aria-label="Submit search"><i class="fa fa-search" aria-hidden="true"></i></button>
     </form>
   </header>
 
-  <section id="intro">
+  <section class="page-intro">
     <h2>SERVICES WE OFFER</h2>
     <p>Monameng Security Company currently offers four services: CCTV Installation, Armed Response, Alarms, and Access Control. These services are delivered with the highest professionalism and efficiency.</p>
   </section>
@@ -41,51 +44,47 @@
     <main class="page-main">
       <div class="card-grid">
 
-        <div class="content-card">
+        <article class="content-card">
           <h3>CCTV INSTALLATION</h3>
-          <p>Protect your property with our advanced CCTV solutions. We offer professional installation of HD smart cameras featuring full-color night vision and motion alerts. Monitor your premises in real time from any mobile device.
-            <a href="cctvInstallation.html">Read more about our CCTV installation &rarr;</a>
-          </p>
-        </div>
+          <p>Protect your property with our advanced CCTV solutions. We offer professional installation of HD smart cameras featuring full-color night vision and motion alerts. Monitor your premises in real time from any mobile device.</p>
+          <a href="cctvInstallation.html">Read more about CCTV Installation &rarr;</a>
+        </article>
 
-        <div class="content-card">
+        <article class="content-card">
           <h3>ARMED RESPONSE</h3>
-          <p>Our elite armed response units are backed by a high-tech monitoring center. Highly trained officers provide rapid-response intervention at a moment's notice, ensuring your safety and that of your property.
-            <a href="armedResponse.html">Read more about our armed response &rarr;</a>
-          </p>
-        </div>
+          <p>Our elite armed response units are backed by a high-tech monitoring center. Highly trained officers provide rapid-response intervention at a moment's notice, ensuring your safety and that of your property.</p>
+          <a href="armedResponse.html">Read more about Armed Response &rarr;</a>
+        </article>
 
-        <div class="content-card">
+        <article class="content-card">
           <h3>ALARMS</h3>
-          <p>We install and monitor high-performance alarm systems designed to detect unauthorized entry the moment it occurs. Wireless sensors, panic buttons, and perimeter beams integrate directly with our 24/7 response center.
-            <a href="alarms.html">Read more about our alarm systems &rarr;</a>
-          </p>
-        </div>
+          <p>We install and monitor high-performance alarm systems designed to detect unauthorized entry the moment it occurs. Wireless sensors, panic buttons, and perimeter beams integrate directly with our 24/7 response center.</p>
+          <a href="alarms.html">Read more about Alarms &rarr;</a>
+        </article>
 
-        <div class="content-card">
+        <article class="content-card">
           <h3>ACCESS CONTROL</h3>
-          <p>Take control of who enters your premises. Biometric scanners, keypad entry, and intercom systems for residential and commercial buildings. Full digital log and total perimeter control.
-            <a href="accessControl.html">Read more about our access control &rarr;</a>
-          </p>
-        </div>
+          <p>Take control of who enters your premises. Biometric scanners, keypad entry, and intercom systems for residential and commercial buildings. Full digital log and total perimeter control.</p>
+          <a href="accessControl.html">Read more about Access Control &rarr;</a>
+        </article>
 
       </div>
     </main>
 
-    <aside class="page-side">
+    <aside class="page-sidebar">
       <h3>Operation Details</h3>
       <h5>24/7 Monitoring</h5>
       <p>All systems are linked to our centralized Command Center for real-time threat detection.</p>
       <h5>Maintenance Support</h5>
       <p>We provide scheduled technical audits and battery testing to ensure your equipment never fails when you need it.</p>
       <h5>Apply Now</h5>
-      <p><a href="apply.html" style="color:#009688;font-weight:600;">Click here to apply for a service &rarr;</a></p>
+      <p><a href="apply.html">Click here to apply for a service &rarr;</a></p>
     </aside>
   </div>
 
-  <footer class="foot">
-    <div class="footer-top">
-      <section class="footer-item">
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <section class="footer-column">
         <h3>CONTACT</h3>
         <ul>
           <li>Phone: +267 73772112</li>
@@ -93,7 +92,7 @@
           <li>Location: Molepolole, Botswana</li>
         </ul>
       </section>
-      <section class="footer-item">
+      <section class="footer-column">
         <h3>LEGAL</h3>
         <ul>
           <li><a href="legal.html">Terms and Conditions</a></li>
@@ -101,7 +100,7 @@
           <li><a href="legal.html">Website Usage Policy</a></li>
         </ul>
       </section>
-      <section class="footer-item">
+      <section class="footer-column">
         <h3>PRIVACY</h3>
         <ul>
           <li><a href="privacy.html">Privacy Policy</a></li>
@@ -110,9 +109,7 @@
         </ul>
       </section>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; Copyright 2026 Monameng Security Company. All rights reserved.</p>
-    </div>
+    <p class="footer-copyright">&copy; Copyright 2026 Monameng Security Company. All rights reserved.</p>
   </footer>
 
   <script src="formvalidation.js"></script>

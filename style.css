@@ -1,3 +1,6 @@
+/* ================================================
+   GLOBAL RESET & BASE
+   ================================================ */
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +9,31 @@
 }
 
 /* ================================================
-   HEADER
+   GLOBAL LINK STYLES — consistent across all pages
    ================================================ */
-header {
+a {
+  color: #009688;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: #00796b;
+  text-decoration: underline;
+}
+
+/* ================================================
+   GLOBAL HEADING COLOR — overrides Bootstrap
+   ================================================ */
+h1, h2, h3, h4, h5, h6 {
+  color: #0b0000;
+}
+
+/* ================================================
+   SITE HEADER
+   ================================================ */
+.site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,34 +44,24 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-.logo {
-  flex: 0 0 auto;
-}
-
-.logo img {
+/* LOGO */
+.site-logo img {
   width: 120px;
   height: auto;
   display: block;
 }
 
-.nav {
+/* MAIN NAVIGATION */
+.site-nav {
   flex: 2;
   display: flex;
   justify-content: center;
 }
 
-.search {
-  flex: 0 0 auto;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-/* NAV LIST */
-.nav ul {
+.site-nav ul {
   display: flex;
   list-style: none;
   gap: 4px;
@@ -55,32 +70,40 @@ header {
   justify-content: center;
 }
 
-.nav a {
-  text-decoration: none;
+.site-nav a {
   color: #0b0000;
   font-size: 0.82rem;
   font-weight: bold;
   text-transform: uppercase;
   padding: 6px 10px;
   border-radius: 20px;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   display: block;
   white-space: nowrap;
+  text-decoration: none;
 }
 
-.nav ul li a.active {
+.site-nav a:hover,
+.site-nav a:focus {
+  background-color: #1fbbc7;
+  color: white;
+  text-decoration: none;
+}
+
+.site-nav a.active {
   background-color: #1fbbc7;
   color: white;
 }
 
-.nav a:hover,
-.nav a:focus {
-  background-color: #1fbbc7;
-  color: white;
+/* SEARCH FORM */
+.site-search {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-/* SEARCH */
-.search input {
+.site-search input[type="text"] {
   padding: 6px 10px;
   border: 1px solid #0b0000;
   border-radius: 3px 0 0 3px;
@@ -89,11 +112,11 @@ header {
   width: 140px;
 }
 
-.search input:focus {
+.site-search input[type="text"]:focus {
   border-color: #1fbbc7;
 }
 
-.search button {
+.site-search button[type="submit"] {
   padding: 6px 10px;
   border: 1px solid #0b0000;
   border-left: none;
@@ -101,20 +124,20 @@ header {
   color: #0b0000;
   border-radius: 0 3px 3px 0;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.search button:hover,
-.search button:focus {
+.site-search button[type="submit"]:hover,
+.site-search button[type="submit"]:focus {
   background-color: #1fbbc7;
   color: white;
   border-color: #1fbbc7;
 }
 
 /* ================================================
-   PAGE INTRO BANNER (used on services, about, etc)
+   PAGE INTRO BANNER
    ================================================ */
-#intro {
+.page-intro {
   background-color: #f4f4f4 !important;
   background: #f4f4f4 !important;
   padding: 20px 30px;
@@ -123,33 +146,15 @@ header {
   border-radius: 4px;
 }
 
-#intro h2,
-#intro h3,
-#intro p {
+.page-intro h2,
+.page-intro h3,
+.page-intro p {
   margin-bottom: 8px;
   color: #0b0000 !important;
 }
 
-/* Force all headings black throughout — overrides Bootstrap */
-h1, h2, h3, h4, h5, h6 {
-  color: #0b0000;
-}
-
-/* EXCEPTION: sidebar headings get teal underline but black text */
-.page-side h3 {
-  color: #0b0000;
-}
-
-/* EXCEPTION: footer headings stay black (already on teal bg) */
-.foot h3 {
-  color: #0b0000;
-}
-
 /* ================================================
-   UNIVERSAL TWO-COLUMN LAYOUT
-   Used on: about, services overview, projects,
-            apply, feedback, cctv, armed, alarms,
-            access control, legal
+   UNIVERSAL TWO-COLUMN PAGE LAYOUT
    ================================================ */
 .page-layout {
   display: grid;
@@ -161,27 +166,47 @@ h1, h2, h3, h4, h5, h6 {
   box-sizing: border-box;
 }
 
-/* MAIN content area */
+/* MAIN CONTENT AREA */
 .page-main {
   padding: 10px;
   border-right: 1px solid #ddd;
 }
 
-/* SIDEBAR */
-.page-side {
+.page-main h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 16px 0 10px;
+}
+
+.page-main h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 14px 0 8px;
+}
+
+.page-main p {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* PAGE SIDEBAR */
+.page-sidebar {
   padding: 15px;
 }
 
-.page-side h3 {
+.page-sidebar h3 {
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 10px;
   padding-bottom: 6px;
   border-bottom: 2px solid #1fbbc7;
+  color: #0b0000;
 }
 
-.page-side h5 {
+.page-sidebar h5 {
   font-size: 0.9rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -189,34 +214,37 @@ h1, h2, h3, h4, h5, h6 {
   color: #009688;
 }
 
-.page-side p,
-.page-side li {
+.page-sidebar p,
+.page-sidebar li {
   font-size: 0.9rem;
   line-height: 1.6;
   margin-bottom: 6px;
 }
 
-.page-side ul {
+.page-sidebar ul {
   list-style: none;
   padding: 0;
 }
 
-.page-side ul li a {
-  text-decoration: none;
+.page-sidebar ul li a {
   color: #0b0000;
   font-size: 0.88rem;
   display: block;
   padding: 5px 0;
   border-bottom: 1px solid #eee;
-  transition: color 0.2s;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.page-side ul li a:hover {
+.page-sidebar ul li a:hover,
+.page-sidebar ul li a:focus {
   color: #009688;
+  text-decoration: none;
 }
 
 /* ================================================
-   CONTENT CARDS (boxes inside .page-main)
+   CONTENT CARD GRID
+   Used on: about, services, projects pages
    ================================================ */
 .card-grid {
   display: grid;
@@ -253,10 +281,16 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+.content-card a:hover,
+.content-card a:focus {
+  color: #00796b;
+}
+
 /* ================================================
-   SERVICE DETAIL PAGES (cctv, armed, alarms, access)
+   SERVICE DETAIL IMAGE
+   Used on: cctv, armed, alarms, access control pages
    ================================================ */
-.main-image {
+.service-banner-image {
   width: 100%;
   height: 300px;
   object-fit: cover;
@@ -265,88 +299,78 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-.page-main h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin: 16px 0 10px;
+/* ================================================
+   APPLY LINK inside page-main
+   ================================================ */
+.service-apply-link {
+  color: #009688;
+  font-weight: 600;
 }
 
-.page-main h4 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin: 14px 0 8px;
-}
-
-.page-main p {
-  font-size: 0.92rem;
-  line-height: 1.75;
-  color: #333;
-  margin-bottom: 12px;
+.service-apply-link:hover,
+.service-apply-link:focus {
+  color: #00796b;
 }
 
 /* ================================================
-   FORMS (apply + feedback)
+   FORMS — apply & feedback pages
    ================================================ */
-.page-main form h3 {
-  margin-bottom: 16px;
-}
-
-.personal-info {
+.form-field-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px 24px;
-  padding: 0;
   margin-bottom: 16px;
 }
 
-.field-group {
+.form-field {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.field-group.full-width {
+.form-field.full-width {
   grid-column: 1 / -1;
 }
 
-.field-group label {
+.form-field label {
   font-size: 0.82rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  color: #0b0000;
 }
 
-.field-group input,
-.field-group textarea,
-.field-group select {
+.form-field input,
+.form-field textarea,
+.form-field select {
   padding: 9px 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 0.9rem;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s ease;
   width: 100%;
 }
 
-.field-group input:focus,
-.field-group textarea:focus {
+.form-field input:focus,
+.form-field textarea:focus {
   border-color: #1fbbc7;
 }
 
-.field-group textarea {
+.form-field textarea {
   resize: vertical;
   min-height: 100px;
 }
 
-/* Service radio cards */
-.form-services-container {
+/* SERVICE RADIO CARD GRID */
+.service-radio-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   margin-bottom: 16px;
 }
 
-.services-thing {
+.service-radio-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -355,21 +379,21 @@ h1, h2, h3, h4, h5, h6 {
   border: 1.5px solid #ddd;
   border-radius: 8px;
   cursor: pointer;
-  transition: border-color 0.3s, background 0.3s;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
-.services-thing:hover {
+.service-radio-card:hover {
   border-color: #1fbbc7;
-  background: #e8f9fb;
+  background-color: #e8f9fb;
 }
 
-.services-thing label {
+.service-radio-card label {
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
 }
 
-/* Form buttons */
+/* FORM ACTION BUTTONS */
 .form-actions {
   display: flex;
   gap: 12px;
@@ -412,36 +436,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ================================================
-   LEGAL / SIMPLE TEXT PAGE
+   HOME PAGE — hero section below carousel
    ================================================ */
-.text-page {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 20px 30px;
-}
-
-.text-page h2 {
-  margin-bottom: 20px;
-  border-bottom: 3px solid #1fbbc7;
-  padding-bottom: 8px;
-}
-
-.text-page h3 {
-  margin: 20px 0 8px;
-  font-size: 1.1rem;
-}
-
-.text-page p {
-  font-size: 0.92rem;
-  line-height: 1.75;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-/* ================================================
-   HOME PAGE
-   ================================================ */
-.main-content {
+.home-main {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -449,55 +446,58 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
-.content-wrapper {
+.home-intro {
   max-width: 1000px;
   margin: 0 auto;
   padding: 30px 20px;
 }
 
-.content-wrapper h1 {
+.home-intro h1 {
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
 
-.content-wrapper h3 {
+.home-intro h2 {
   font-size: 1rem;
   margin-bottom: 14px;
   color: #444;
+  font-weight: 600;
 }
 
-.content-wrapper p {
+.home-intro p {
   font-size: 0.95rem;
   line-height: 1.75;
   color: #333;
 }
 
 /* ================================================
-   CAROUSEL
+   BOOTSTRAP CAROUSEL — custom overrides
    ================================================ */
-.carousel {
+.site-carousel {
   width: 100%;
   height: 500px;
   overflow: hidden;
   position: relative;
 }
 
-.carousel-item img {
+.site-carousel .carousel-item img {
   width: 100%;
   height: 500px;
   object-fit: cover;
   object-position: center;
 }
 
-.carousel-item::after {
+.site-carousel .carousel-item::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.45);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
 }
 
-.carousel-caption {
+.site-carousel .carousel-caption {
   position: absolute !important;
   bottom: auto !important;
   top: 50%;
@@ -509,24 +509,24 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 50%;
 }
 
-.carousel-caption h3 {
+.site-carousel .carousel-caption h3 {
   font-size: 2rem;
   font-weight: 700;
   color: #ffffff;
   text-transform: uppercase;
   margin-bottom: 10px;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-.carousel-caption p {
+.site-carousel .carousel-caption p {
   font-size: 0.95rem;
   color: #e0e0e0;
   margin-bottom: 20px;
   line-height: 1.6;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-.carousel-caption .btn-apply {
+.btn-carousel-apply {
   display: inline-block;
   padding: 10px 28px;
   background: #009688;
@@ -535,45 +535,53 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   text-decoration: none;
   border-radius: 25px;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.carousel-caption .btn-apply:hover {
-  background: #00796b;
+.btn-carousel-apply:hover,
+.btn-carousel-apply:focus {
+  background-color: #00796b;
+  color: #ffffff;
   transform: translateY(-2px);
+  text-decoration: none;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
+.site-carousel .carousel-control-prev,
+.site-carousel .carousel-control-next {
   width: 45px;
   height: 45px;
-  background: rgba(0,150,136,0.7);
+  background: rgba(0, 150, 136, 0.7);
   border-radius: 50%;
   top: 50%;
   transform: translateY(-50%);
   opacity: 1;
 }
 
-.carousel-control-prev { left: 15px; }
-.carousel-control-next { right: 15px; }
+.site-carousel .carousel-control-prev { left: 15px; }
+.site-carousel .carousel-control-next { right: 15px; }
 
-.carousel-control-prev:hover,
-.carousel-control-next:hover { background: #009688; }
+.site-carousel .carousel-control-prev:hover,
+.site-carousel .carousel-control-next:hover {
+  background: #009688;
+}
 
-.carousel-indicators button {
-  width: 10px; height: 10px;
+.site-carousel .carousel-indicators button {
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   border: none;
   margin: 0 4px;
 }
 
-.carousel-indicators button.active { background: #009688; }
+.site-carousel .carousel-indicators button.active {
+  background: #009688;
+}
 
 /* ================================================
-   FOOTER
+   SITE FOOTER
    ================================================ */
-.foot {
+.site-footer {
   background-color: #1fbbc7;
   color: #0b0000;
   padding: 2rem 1rem 1rem;
@@ -584,7 +592,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 40px;
 }
 
-.footer-top {
+.footer-columns {
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
@@ -595,42 +603,45 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-.footer-item h3 {
+.footer-column h3 {
   margin-bottom: 0.5rem;
   font-size: 1rem;
+  color: #0b0000;
 }
 
-.footer-item ul {
+.footer-column ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-item li {
+.footer-column li {
   margin-bottom: 0.4rem;
   font-size: 0.88rem;
 }
 
-.footer-item a {
-  text-decoration: none;
+.footer-column a {
   color: #0b0000;
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
 }
 
-.footer-item a:hover,
-.footer-item a:focus {
+.footer-column a:hover,
+.footer-column a:focus {
   text-decoration: underline;
+  color:   #0b0000;
 }
 
-.footer-bottom {
+.footer-copyright {
   width: 100%;
   text-align: center;
   padding-top: 1rem;
-  border-top: 1px solid rgba(0,0,0,0.15);
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
   font-size: 0.85rem;
 }
 
 /* ================================================
-   RESPONSIVE — TABLET (max 900px)
+   RESPONSIVE — TABLET (max-width: 900px)
    ================================================ */
 @media (max-width: 900px) {
   .page-layout {
@@ -650,66 +661,62 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ================================================
-   RESPONSIVE — MOBILE (max 768px)
+   RESPONSIVE — MOBILE (max-width: 768px)
    ================================================ */
 @media (max-width: 768px) {
 
-  /* Header stacks vertically */
-  header {
+  .site-header {
     flex-direction: column;
     align-items: flex-start;
     padding: 10px;
   }
 
-  .logo img {
+  .site-logo img {
     width: 90px;
   }
 
-  .nav {
+  .site-nav {
     width: 100%;
     justify-content: flex-start;
   }
 
-  .nav ul {
+  .site-nav ul {
     flex-wrap: wrap;
     gap: 4px;
     justify-content: flex-start;
   }
 
-  .nav a {
+  .site-nav a {
     font-size: 0.75rem;
     padding: 5px 8px;
   }
 
-  .search {
+  .site-search {
     width: 100%;
   }
 
-  .search input {
+  .site-search input[type="text"] {
     flex: 1;
     width: auto;
   }
 
-  /* Carousel */
-  .carousel,
-  .carousel-item img {
+  .site-carousel,
+  .site-carousel .carousel-item img {
     height: 260px;
   }
 
-  .carousel-caption {
+  .site-carousel .carousel-caption {
     max-width: 80%;
   }
 
-  .carousel-caption h3 {
+  .site-carousel .carousel-caption h3 {
     font-size: 1.2rem;
   }
 
-  .carousel-caption p {
-    font-size: 0.78rem;
-    display: none; /* hide on very small screens */
+  .site-carousel .carousel-caption p {
+    display: none;
   }
 
-  /* Page layout single column */
   .page-layout {
     grid-template-columns: 1fr;
     padding: 12px;
@@ -720,14 +727,12 @@ h1, h2, h3, h4, h5, h6 {
     border-right: none;
   }
 
-  /* Cards single column */
   .card-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Forms single column */
-  .personal-info,
-  .form-services-container {
+  .form-field-grid,
+  .service-radio-grid {
     grid-template-columns: 1fr;
   }
 
@@ -735,20 +740,12 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
   }
 
-  /* Intro */
-  #intro {
+  .page-intro {
     margin: 10px;
     padding: 14px;
   }
 
-  /* Text page */
-  .text-page {
-    margin: 10px;
-    padding: 14px;
-  }
-
-  /* Footer */
-  .footer-top {
+  .footer-columns {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
@@ -756,24 +753,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ================================================
-   RESPONSIVE — SMALL MOBILE (max 480px)
+   RESPONSIVE — SMALL MOBILE (max-width: 480px)
    ================================================ */
 @media (max-width: 480px) {
-  .carousel,
-  .carousel-item img {
+
+  .site-carousel,
+  .site-carousel .carousel-item img {
     height: 200px;
   }
 
-  .carousel-caption h3 {
+  .site-carousel .carousel-caption h3 {
     font-size: 1rem;
   }
 
-  .carousel-caption .btn-apply {
+  .btn-carousel-apply {
     padding: 7px 16px;
     font-size: 0.82rem;
   }
 
-  .content-wrapper h1 {
+  .home-intro h1 {
     font-size: 1.2rem;
   }
 }

@@ -12,11 +12,13 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="images/logo.png" alt="Monameng Security Company logo">
+  <header class="site-header">
+    <div class="site-logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Monameng Security Company logo" width="120" height="60">
+      </a>
     </div>
-    <nav class="nav">
+    <nav class="site-nav" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -26,13 +28,14 @@
         <li><a href="feedback.html">Feedback</a></li>
       </ul>
     </nav>
-    <form class="search" onsubmit="return runSearch()">
+    <form class="site-search" onsubmit="return runSearch()" role="search">
+      <label for="search-input" class="visually-hidden">Search</label>
       <input type="text" id="search-input" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
+      <button type="submit" aria-label="Submit search"><i class="fa fa-search" aria-hidden="true"></i></button>
     </form>
   </header>
 
-  <section id="intro">
+  <section class="page-intro">
     <h2>CURRENT BIG PROJECTS</h2>
     <p>Here are some of our ongoing and recently completed security projects across Botswana.</p>
   </section>
@@ -41,43 +44,43 @@
     <main class="page-main">
       <div class="card-grid">
 
-        <div class="content-card">
+        <article class="content-card">
           <h5>Gaborone West Industrial Complex</h5>
           <p>High-security surveillance and alarm monitoring for a multi-warehouse logistics park.</p>
-        </div>
+        </article>
 
-        <div class="content-card">
+        <article class="content-card">
           <h5>First National Bank</h5>
           <p>Responsible for alarm and CCTV monitoring in the Bank at Mafenyatlala Mall.</p>
-        </div>
+        </article>
 
-        <div class="content-card">
+        <article class="content-card">
           <h5>Phakalane Golf Estate Private Residence</h5>
           <p>Installed an alarm on the 20th of February in a residential home, linked to our 24/7 Alarm Response.</p>
-        </div>
+        </article>
 
-        <div class="content-card">
+        <article class="content-card">
           <h5>Borakalalo Primary School</h5>
           <p>Installed card readers on 10 April 2026 to allow only authorized staff members and students through the school gates.</p>
-        </div>
+        </article>
 
       </div>
     </main>
 
-    <aside class="page-side">
+    <aside class="page-sidebar">
       <h3>Safety Advice</h3>
       <p>Be aware of your surroundings. Pay attention to people, places, and activities around you.</p>
       <p>Keep emergency contacts and numbers nearby.</p>
-      <a href="https://youtube.com/shorts/mX0SunmarlU?si=weIIGkKIA5M4v2CK" target="_blank">
-        <img src="images/video (2).png" alt="Watch a video of security tips on YouTube" width="100%" style="margin-top:10px;border-radius:6px;">
-        <p style="margin-top:5px;font-size:0.85rem;color:#009688;">Click to watch on YouTube</p>
+      <a href="https://youtube.com/shorts/mX0SunmarlU?si=weIIGkKIA5M4v2CK" target="_blank" rel="noopener noreferrer">
+        <img src="images/video (2).png" alt="Thumbnail linking to a YouTube video about security tips" width="220" height="140">
+        <p>Click to watch on YouTube</p>
       </a>
     </aside>
   </div>
 
-  <footer class="foot">
-    <div class="footer-top">
-      <section class="footer-item">
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <section class="footer-column">
         <h3>CONTACT</h3>
         <ul>
           <li>Phone: +267 73772112</li>
@@ -85,7 +88,7 @@
           <li>Location: Molepolole, Botswana</li>
         </ul>
       </section>
-      <section class="footer-item">
+      <section class="footer-column">
         <h3>LEGAL</h3>
         <ul>
           <li><a href="legal.html">Terms and Conditions</a></li>
@@ -93,7 +96,7 @@
           <li><a href="legal.html">Website Usage Policy</a></li>
         </ul>
       </section>
-      <section class="footer-item">
+      <section class="footer-column">
         <h3>PRIVACY</h3>
         <ul>
           <li><a href="privacy.html">Privacy Policy</a></li>
@@ -102,9 +105,7 @@
         </ul>
       </section>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; Copyright 2026 Monameng Security Company. All rights reserved.</p>
-    </div>
+    <p class="footer-copyright">&copy; Copyright 2026 Monameng Security Company. All rights reserved.</p>
   </footer>
 
   <script src="formvalidation.js"></script>
